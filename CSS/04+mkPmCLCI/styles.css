@@ -1,0 +1,27 @@
+h1 {
+	color: rgb(20,0,60);
+}
+
+h2 {
+	color: blue;
+}
+
+h3 {
+	color: red;
+}
+
+p {
+	color: #6633CC;
+}
+
+table {
+	background-color: #FFFE0;
+	color: black;
+	border: lpx solid: #BDB76B;
+}
+
+tr {
+	background-color: #BDB76B;
+	color: white;
+}
+

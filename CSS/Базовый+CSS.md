@@ -388,3 +388,28 @@ p {
 	font: bold italic 16px/50px Arial;
 }
 ```
+
+### Красная строка текста в CSS
+
+свойство text-indent
+
+сделаем красную строку для абзацев:
+
+```
+<p>
+	long text...
+</p>
+<p>
+	long text...
+</p>
+<p>
+	long text...
+</p>
+p {
+	text-indent: 50px;
+	text-align: justify;
+	width: 400px;
+}
+```
+
+

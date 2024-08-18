@@ -1,7 +1,13 @@
 [Исходник](https://axenov.dev/смена-кодировки-git-репозитория-с-cp-1251-на-utf-8/)
+
 [Настройка русских шрифтов в Git](https://pr0git.blogspot.com/2015/02/git_4.html)
+
 [https://habr.com/ru/articles/74839/](https://habr.com/ru/articles/74839/)
+
 [Русская локализация GIT](https://yaroslav.pukazov.ru/hub/12/russian-git/)
+
+[Git: кодирование символов для сообщений commit](https://microsin.net/programming/arm/git-character-encoding-for-commit-messages.html)
+
 
 ### Смена кодировки git-репозитория с CP-1251 на UTF-8
 
@@ -48,6 +54,8 @@
 	# кодировка вывода в консоль, если не задана, то == commitencoding 
 	logoutputencoding = cp866
 ```
+
+[!Замечание] Посмотреть локаль `git bash`: в `git shell` набрать `locale`
 
 Переходим в рабочую директорию проекта и смотрим кодировку коммитов:
 

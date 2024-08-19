@@ -32,3 +32,8 @@ https://ikshitij.com/notepad-themes
 ### Набор оформления для формата markdown
 
 https://github.com/Edditoria/markdown-plus-plus?tab=readme-ov-file
+
+### Папка как проект
+
+https://notepadpp.fandom.com/ru/wiki/Открыть_папку_как_проект
+

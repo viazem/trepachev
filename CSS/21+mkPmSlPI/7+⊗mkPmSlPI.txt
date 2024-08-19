@@ -1,0 +1,26 @@
+⊗mkPmSlPI
+№ 7
+
+Изучив код, скажите какой размер будет иметь текст в теге i:
+
+<ul>
+	<li>text <i>italic</i> text</li>
+	<li>text <i>italic</i> text</li>
+	<li>text <i>italic</i> text</li>
+</ul>
+
+i {
+	font-size: 30px;
+}
+
+ul {
+	font-size: 20px;
+}
+
+li {
+	color: red;
+	font-weight: bold;
+}
+
+Ответ:  30px
+

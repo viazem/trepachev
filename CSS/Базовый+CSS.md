@@ -567,3 +567,155 @@ i {
 
 Порядок селекторов в CSS коде в таком случае не имеет значения. Если переставить местами селектор i и селектор p, все будет работать так же:
 
+
+### Группировка селекторов в CSS  ⊗mkPmSlSG
+
+https://code.mu/ru/markup/book/prime/theory/selectors-grouping/
+
+ ```
+ h2 {
+	color: red;
+}
+h3 {
+	color: red;
+}
+p {
+	color: red;
+}
+```
+
+Так короче
+
+```
+ h2, h3, p {
+	color: red;
+}
+```
+
+
+### Общие свойства при группировке селекторов в CSS ⊗mkPmSlCP
+
+https://code.mu/ru/markup/book/prime/theory/common-properties/
+ 
+Бывает такое, что часть свойств некоторых селекторов одинакова, а часть - отличается. 
+
+```
+h2 {
+	color: red;
+}
+
+h3 {
+	color: red;
+}
+
+p {
+	color: red;
+	text-align: justify;
+	font-size: 16px;
+}
+```
+
+В таком случае можно сгруппировать повторяющиеся части, а то, что не повторяется, записать отдельно:
+
+ ```
+ h2, h3, p {
+	color: red;
+}
+
+p {
+	text-align: justify;
+	font-size: 16px;
+}
+```
+
+### Селектор потомков в CSS  ⊗mkPmSlDS
+
+https://code.mu/ru/markup/book/prime/theory/descendant-selector/
+
+```
+<ul>
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+</ul>
+<ol>
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+</ol>
+```
+
+Давайте покрасим теги li в этих списках в красный цвет:
+
+```
+li {
+	color: red;
+}
+```
+
+Пусть теперь мы хотим покрасить теги li списка ul в красный цвет, а теги li списка ol - в зеленый.
+
+В этом случае нам поможет селектор **потомков**.
+
+Он позволяет выбирать теги по их родителю. Для этого нужно указать селектор родителя, а через пробел - селектор потомка.
+
+В нашем случае селектор ul li выберет все теги li из списка ul, а селектор ol li - выберет все теги li из списка ol.
+
+ ```
+ul li {
+	color: red;
+}
+
+ol li {
+	color: green;
+}
+```
+
+Селектор потомков не обязательно должен состоять из двух селекторов тегов - их может быть любое количество, записанное через пробел.
+
+В следующем коде, например, выбираются все теги i, находящиеся внутри тега li, которые в свою очередь находятся внутри тега ul:
+
+```
+ul li i {
+	color: red;
+}
+```
+
+Задача № 1 Покрасьте в красный цвет курсив из тегов ul, а в зеленый цвет - курсив из тегов p.
+
+```
+<ul>
+	<li>text <i>italic</i></li>
+	<li>text <i>italic</i></li>
+	<li>text <i>italic</i></li>
+	<li>text <i>italic</i></li>
+</ul>
+
+<p>
+	<li>paragraph text <i>italic</i></li>
+</p>
+<p>
+	<li>paragraph text <i>italic</i></li>
+</p>
+```
+
+
+Задача № 2 Покрасьте в красный цвет курсив, находящийся внутри тега b, который в свою очередь находится внутри тега p.
+
+ ```
+<p>
+	paragraph text <b><i>bold italic</i></b>
+</p>
+<p>
+	paragraph text <i>italic</i>
+</p>
+ ```
+ 
+###  Дочерний селектор в CSS  ⊗mkPmSlChS
+
+https://code.mu/ru/markup/book/prime/theory/child-selector/
+ 

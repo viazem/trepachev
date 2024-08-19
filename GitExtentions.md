@@ -4,5 +4,15 @@
 
 <https://dir.by/developer/git/gitignore/>
 
+### Настройки Git Extentions
+
+Git-Config
+
+User name =
+
+Line editing = Checkout as-is, commit as-is
+
+Files content encoding = Unicode (UTF-8)
+
 
 

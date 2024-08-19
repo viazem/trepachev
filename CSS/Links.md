@@ -1,12 +1,5 @@
-### Основы работы с языком CSS
 
-https://code.mu/ru/markup/book/prime/css/intro/
+### Родственные связи тегов в HTML ⊗mkPmSlTR  19.08.2024
 
-### Ключевые слова для цвета в CSS
+https://code.mu/ru/markup/book/prime/theory/tags-relationship/
 
-https://code.mu/ru/markup/book/prime/css/color-keywords/
-
-
-### Жирность текста в CSS
-
-https://code.mu/ru/markup/book/prime/css/text-boldness/

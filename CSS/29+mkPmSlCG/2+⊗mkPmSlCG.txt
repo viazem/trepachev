@@ -1,0 +1,20 @@
+⊗mkPmSlCG
+№ 2
+
+.eee {
+	font-size: 20px;
+}
+
+.zzz {
+	font-size: 30px;
+}
+
+.ggg {
+	font-size: 35px;
+}
+
+.eee, .zzz, .ggg {
+	font-family: Arial;
+	text-align: center;
+}
+

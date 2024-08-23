@@ -1,0 +1,76 @@
+<!-- ⊗mkPmSlDSCC -->
+<!-- 6 -->
+
+<!-- Для проверки ответов -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+<style>
+
+p { width: 400px;  line-height: 1.2;}
+
+code { color: blue;}
+
+.eee .bbb .kkk {
+	color: red;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<p>
+Указанный ниже код выбирает все элементы находящиеся в классе <code>kkk</code> которые находятся в элементе с классом <code>bbb</code> который находится в элементе <code>eee</code> и задаёт им свойство <b>color</b>.
+</p>
+
+<p>Код:</p>
+	
+<pre><code>
+.eee .bbb .kkk {
+	color: red;
+}
+</code></pre>
+
+<div  class="eee">
+
+<p class="bbb">
+Lorem ipsum dolor sit amet, <span class="kkk">consectetur adipisicing</span>  elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+</p>
+
+
+<ul class="bbb">
+	<li>Item 1</li>
+		<ol>
+			<li>Item 1-1</li>
+			<li class="kkk">Item 1-3</li>     <!-- выделен -->
+			<li>Item 1-3</li>
+		</ol>
+	<li>Item 2</li>
+	<li>Item 3</li>
+	<li>Item 4</li>
+</ul>
+
+<ul class="bbb">
+	<li class="kkk">Item 1</li>       <!-- выделен -->
+	<li class="kkk">Item 2</li>       <!-- выделен -->
+</ul>
+
+<div class="bbb">
+<ol>
+	<li>Item 1</li>
+	<li class="kkk">Item 2</li>        <!-- выделен -->
+	<li>Item 3</li>
+	<li class="kkk">Item 4</li>         <!-- выделен -->
+</ol>
+</div>
+
+</div>
+
+
+</body>
+
+</html>

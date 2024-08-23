@@ -1,5 +1,5 @@
 <!-- ⊗mkPmSlSCE -->
-<!-- 1 -->
+<!-- 2 -->
 
 <!-- Для проверки ответов -->
 <!DOCTYPE html>
@@ -13,18 +13,24 @@
 	
 <style>
 
-.success {
-	color: green;
-}
-.error {
-	color: red;
-}
-.large {
+.warn {
+	color: magenta;
 	font-size: 30px;
+	font-family: courier, monospace, sans-serif;
 }
-.small {
-	font-size: 20px;
+
+.code {
+	color: blue;
+	font-family: courier, monospace, sans-serif;
 }
+
+.note {
+	color: fuchsia;
+	font-family: verdana, arial, sans-serif;
+	font-style: italic;
+}
+
+<!-- Приоритет класса обратно порядку определения, 1 - note, 2 - code, 3 - warn -->
 
 </style>
 
@@ -32,21 +38,18 @@
 
 <body>
 
-<p class="success large">
+<h2>Все три класс установлены - code, note, warn.</h2>
+
+<p class="note warn code">
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 </p>
 
-<p class="error small">
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
+<h2>Установлен два класса - warn, code.</h2>
 
-<p class="error large">
+<p class="warn code">
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 </p>
 
-<p class="success small">
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
 
 </body>
 

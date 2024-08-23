@@ -1719,3 +1719,6 @@ h2#elem.bbb {
 }
 
 
+### Ошибка при использовании несколько CSS селекторов ⊗mkPmSlSSM
+
+https://code.mu/ru/markup/book/prime/theory/several-selectors-mistake/

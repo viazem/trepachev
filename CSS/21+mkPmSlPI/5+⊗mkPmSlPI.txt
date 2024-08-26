@@ -1,0 +1,21 @@
+⊗mkPmSlPI
+№ 5
+
+Изучив код, скажите какой цвет будет иметь текст в теге li:
+
+<ul>
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+</ul>
+
+ul {
+	color: blue;
+}
+
+li {
+	color: red;
+}
+
+Ответ:  красный цвет.
+

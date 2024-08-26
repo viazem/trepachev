@@ -1,0 +1,10 @@
+⊗mkPmSlDS
+№ 1
+
+ul li i {
+	color: red;
+}
+
+li i {
+	color: green;
+}	

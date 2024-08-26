@@ -1,0 +1,6 @@
+⊗mkPmSlDS
+№ 2
+
+p b i {
+	color: red;
+}

@@ -1,0 +1,25 @@
+⊗mkPmSlPI
+№ 6
+
+Изучив код, скажите какой цвет будет иметь текст в теге i:
+
+<ul>
+	<li>text <i>italic</i> text</li>
+	<li>text <i>italic</i> text</li>
+	<li>text <i>italic</i> text</li>
+</ul>
+
+ul {
+	color: blue;
+}
+
+li {
+	color: red;
+}
+
+i {
+	color: green;
+}
+
+Ответ:  зеленый цвет.
+

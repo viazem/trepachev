@@ -1,5 +1,5 @@
 <!-- ⊗mkPmSlSSM -->
-<!-- 3 -->
+<!-- 4 -->
 
 <!-- Для проверки ответов -->
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ div.exam { width: 600px;  line-height: 1.2; font-family: Arial, sans-serif; font
 
 code { color: blue; font-family: courier, monospace, sans-serif; }
 
-.bbb.zzz {
+.bbb .zzz {
 	color: red;
 }
 
@@ -31,13 +31,14 @@ code { color: blue; font-family: courier, monospace, sans-serif; }
 
 
 <p class="answ">
-В приведённом коде селектор <code>.bbb.zzz</code> выберет все элементы имеющими одновременно классы <code>.bbb</code> и <code>.zzz</code>.
+В приведённом коде селектор <code>.bbb .zzz</code> (с пробелом) выберет все элементы имеющими класс <code>.zzz</code> находящиеся внутри элемента класса <code>.bbb</code>.
 </p>
 
 <div class="exam">
 
-Lorem ipsum dolor sit amet, <i class="bbb zzz">ВОТ ЭТО БУДЕТ ВЫБРАНО</i>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-
+<p class="bbb">
+Lorem ipsum dolor sit amet, <i class="zzz">ВОТ ЭТО БУДЕТ ВЫБРАНО</i>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+</p>
 
 Ut enim ad minim veniam, <i class="bbb">ЭТО БУДЕТ ПРОПУЩЕНО</i> laboris nisi ut aliquip ex ea commodo consequat.
 

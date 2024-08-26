@@ -1727,3 +1727,20 @@ https://code.mu/ru/markup/book/prime/theory/several-selectors-mistake/
 Напоминаю, про ошибку новичков: селектор .bbb.zzz и селектор .bbb .zzz делают разные вещи. Первый ищет элемент, имеющий одновременно два класса, а второй - ищет элемент с классом zzz, находящийся внутри класса bbb.
 
 
+21:56 home
+
+### Ошибка при группировке сложных CSS селекторов ⊗mkPmSlCSGM
+
+https://code.mu/ru/markup/book/prime/theory/complex-selectors-grouping-mistake/
+
+
+Все, что разделено запятой при группировке, должно представлять собой полноценный селектор. Давайте посмотрим, где здесь можно ошибиться.
+
+
+
+### Практика на комбинации CSS селекторов ⊗mkPmSlSCP
+
+https://code.mu/ru/markup/book/prime/theory/selectors-combination-training/
+
+
+остановился на 7 задании

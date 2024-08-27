@@ -1,5 +1,5 @@
-<!-- ⊗mkPmSlSCP -->
-<!-- 4 -->
+<!-- ⊗mkPmSlASS -->
+<!-- 1 -->
 
 <!-- Для проверки ответов -->
 <!DOCTYPE html>
@@ -8,7 +8,7 @@
 <head>
 
 <meta charset="utf-8">
-<title>⊗mkPmSlSCP</title>
+<title>⊗mkPmSlASS</title>
 
 	
 <style>
@@ -19,7 +19,8 @@ div.exam { width: 600px;  line-height: 1.2; font-family: Arial, sans-serif; font
 
 code { color: blue; font-family: courier, monospace, sans-serif; }
 
-#block h2 {
+
+#elem + li {
 	color: red;
 	}
 
@@ -31,35 +32,22 @@ code { color: blue; font-family: courier, monospace, sans-serif; }
 
 <!--
 
-Напишите селектор, который выберет все h2 из элемента с id, равным block. Проверьте ваш селектор на следующем коде:
+Напишите селектор, который выберет элемент, находящийся сразу после элемента #elem.
 
 -->
 
-<div id="block">
-	<h2>+++</h2>
-	<p>
-		---
-	</p>
-	<p>
-		---
-	</p>
-	
-	<h2>+++</h2>
-	<p>
-		---
-	</p>
-</div>
-<div>
-	<h2>---</h2>
-	<p>
-		---
-	</p>
-</div>
 
-<h2>---</h2>
-<p>
-	---
-</p>
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li id="elem">5</li>
+	<li>6</li>
+	<li>7</li>
+	<li>8</li>
+	<li>9</li>
+</ul>
 
 </body>
 

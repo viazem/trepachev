@@ -1,5 +1,5 @@
 <!-- ⊗mkPmSlSCP -->
-<!-- 5 -->
+<!-- 10 -->
 
 <!-- Для проверки ответов -->
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ div.exam { width: 600px;  line-height: 1.2; font-family: Arial, sans-serif; font
 
 code { color: blue; font-family: courier, monospace, sans-serif; }
 
-#block .bbb {
+.bbb, .xxx {
 	color: red;
 	}
 
@@ -31,32 +31,29 @@ code { color: blue; font-family: courier, monospace, sans-serif; }
 
 <!--
 
-Напишите селектор, который выберет все элементы с классом bbb из элемента с id, равным block. Проверьте ваш селектор на следующем коде:
+Напишите селектор, который выберет все элементы с классом bbb и элементы с классом xxx одновременно (то есть нужно сгруппировать селекторы через запятую). Проверьте ваш селектор на следующем коде:
 
 -->
 
-<div id="block">
-	<h2 class="bbb">+++</h2>
-	<p class="bbb">
-		+++
-	</p>
-	<p>
-		---
-	</p>
-	
-	<h2 class="bbb">+++</h2>
-	<p>
-		---
-	</p>
-</div>
-<div class="bbb">
-	---
-</div>
-
-<h2>---</h2>
+<h2 class="bbb">+++</h2>
 <p class="bbb">
+	+++
+</p>
+
+<h2 class="xxx">+++</h2>
+<p>
 	---
 </p>
+
+<h2>---</h2>
+<p class="xxx">
+	+++
+</p>
+
+<div class="bbb">
+	+++
+</div>
+
 
 </body>
 

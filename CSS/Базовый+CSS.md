@@ -1811,6 +1811,28 @@ h3 {
 ```
 
 
-21:56 home
+### Практика на комбинации CSS селекторов ⊗mkPmSlSCP
 
-остановился на 7 задании
+
+https://code.mu/ru/markup/book/prime/theory/selectors-combination-training/
+
+
+### Приоритет селекторов CSS ⊗mkPmSlSP
+
+https://code.mu/ru/markup/book/prime/theory/selectors-priority/
+
+
+Пусть у нас есть следующий код:
+
+```
+p {
+	color: red;
+}
+
+p {
+	color: green;
+}
+```
+
+
+Как вы видите, сначала абзацам задается красный цвет, а потом ниже - зеленый. В этом случае вторая запись переопределит первую и абзацы станут зеленого цвета.

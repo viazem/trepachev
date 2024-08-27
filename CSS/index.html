@@ -19,8 +19,16 @@ div.exam { width: 600px;  line-height: 1.2; font-family: Arial, sans-serif; font
 
 code { color: blue; font-family: courier, monospace, sans-serif; }
 
-h2.zzz {
-	color: red;
+#block h1 {
+	font-size: 30px;
+}
+
+#block h2 {
+	font-size: 20px;
+}
+
+#block h1, h2 {
+	text-align: center;
 }
 
 </style>
@@ -29,21 +37,21 @@ h2.zzz {
 
 <body>
 
+<div id="block">
 
-<p class="answ">
-В приведённом коде селектор <code>h2.zzz</code> выберет заголовки <code>h2</code> имеющими класс zzz.
-</p>
+	<h1>Заголовок 1 задания</h1>
 
-<div class="exam">
+</div>
 
-<h2 class="zzz">H2 CLASS=ZZZ</h2>
+<div id="block">
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+	<h2>Заголовок 2 задания</h2>
 
-<h2>Заголовок H2 без класса</h2>
+</div>
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+<div>
 
+	<h2>Заголовок 2 задания</h2>
 
 </div>
 

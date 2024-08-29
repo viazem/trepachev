@@ -1964,6 +1964,7 @@ p {
 #block {
 	color: red;
 }
+
 .text {
 	color: green; /* применится этот цвет */
 }
@@ -2154,6 +2155,8 @@ https://code.mu/ru/markup/book/prime/theory/universal-selector/
 Универсальный селектор `*` позволяет выбирать все элементы.
 
 Пример 
+
+
 Давайте выберем все элементы и покрасим их в красный цвет:
 
 ```
@@ -2224,6 +2227,77 @@ div p.some_class {
 ```
 
 
+### Селекторы атрибутов в CSS ⊗mkPmSlAS
 
+Изучите теорию по следующим ссылкам:
+
+name value start end text variant hyphen
+
+
+https://code.mu/ru/markup/manual/css/selector/attribute/name/
+
+https://code.mu/ru/markup/manual/css/selector/attribute/value/
+
+https://code.mu/ru/markup/manual/css/selector/attribute/start/
+
+https://code.mu/ru/markup/manual/css/selector/attribute/end/
+
+https://code.mu/ru/markup/manual/css/selector/attribute/text/
+
+https://code.mu/ru/markup/manual/css/selector/attribute/variant/
+
+https://code.mu/ru/markup/manual/css/selector/attribute/hyphen/
+
+
+
+### Селектор по имени атрибута
+
+https://code.mu/ru/markup/manual/css/selector/attribute/name/
+
+Селектор по имени атрибута задает стиль элементу, у которого есть только указанный атрибут тега.
+
+Пример
+ 
+Давайте обратимся к тегу <input>, с атрибутом type, и зададим ему голубой цвет фона:
+
+
+```
+<p>
+	<label>Enter text</label>
+	<input>
+</p>
+<p>
+	<label>Enter number</label>
+	<input type="number">
+</p>
+input[type] {
+	background-color: #C2DDFD;
+}
+```
+
+
+### Селектор по значению атрибута
+
+https://code.mu/ru/markup/manual/css/selector/attribute/value/
+
+Селектор по значению атрибута позволяет выбрать элементы по наличию у них определенного атрибута или его значения и применить к ним нужный стиль.
+
+Пример
+ 
+Давайте обратимся к тегу <input>, у которого значение атрибута type, равно text и зададим ему голубой цвет фона:
+
+```
+<p>
+	<label>Enter text</label>
+	<input type="text">
+</p>
+<p>
+	<label>Enter number</label>
+	<input type="number">
+</p>
+input[type="text"] {
+	background-color: #C2DDFD;
+}
+```
 
 

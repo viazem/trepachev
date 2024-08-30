@@ -2266,10 +2266,12 @@ https://code.mu/ru/markup/manual/css/selector/attribute/name/
 	<label>Enter text</label>
 	<input>
 </p>
+
 <p>
 	<label>Enter number</label>
 	<input type="number">
 </p>
+
 input[type] {
 	background-color: #C2DDFD;
 }
@@ -2291,12 +2293,122 @@ https://code.mu/ru/markup/manual/css/selector/attribute/value/
 	<label>Enter text</label>
 	<input type="text">
 </p>
+
 <p>
 	<label>Enter number</label>
 	<input type="number">
 </p>
+
 input[type="text"] {
 	background-color: #C2DDFD;
+}
+```
+
+### Селектор по началу значения атрибута
+
+https://code.mu/ru/markup/manual/css/selector/attribute/start/
+
+Селектор по началу значения атрибута применяет стиль к элементу, у которого значение атрибута тега начинается с определенного текста.
+
+Пример
+ 
+Давайте обратимся к тегу <a>, у которого значение атрибута href начинается на https и перекрасим его в красный цвет:
+
+```
+<a href="file.html">link1</a>
+
+<a href="https://code.mu">link2</a>
+
+a[href^="https://"] {
+	color: red;
+}
+```
+
+
+### Селектор по концу значения атрибута
+
+https://code.mu/ru/markup/manual/css/selector/attribute/end/
+
+Селектор по концу значения атрибута применяет стиль к элементу, у которого значение атрибута тега заканчивается на определенный текст.
+
+Пример
+ 
+Давайте обратимся к тегу <p>, у которого значение атрибута title заканчивается на .html и перекрасим его в красный цвет:
+
+```
+<a href="file.html">link1</a>
+
+<a href="https://code.mu">link2</a>
+
+a[href$=".html"] {
+	color: red;
+}
+```
+
+### Селектор атрибута по тексту
+
+https://code.mu/ru/markup/manual/css/selector/attribute/text/
+
+Селектор атрибута по тексту применяет стиль к элементу, у которого значение атрибута тега содержит определенный текст.
+
+Пример
+ 
+Давайте найдем ссылки, содержащие в атрибутах test, и перекрасим их в зеленый цвет:
+
+```
+<a href="https://test.com">link1</a>
+
+<a href="https://code.mu">link2</a>
+
+<a href="http://my-test.com">link3</a>
+
+a[href*="test"] {
+	color: green;
+}
+```
+
+### Селектор по одному из значений атрибута
+
+https://code.mu/ru/markup/manual/css/selector/attribute/variant/
+
+Селектор по одному из значений атрибута задает стиль элементу, у которого в атрибуте есть хотя бы одно из указанных значений. При этом все значения атрибута должны быть разделены пробелом.
+
+Пример 
+
+Давайте найдем все <p>, содержащие в одном из значений test, и перекрасим их в синий цвет:
+
+
+```
+<p class="test main">text1</p>
+
+<p class="text">text2</p>
+
+<p class="tag test">text3</p>
+
+p[class~="test"] {
+	color: blue;
+}
+```
+
+
+### Селектор атрибута по дефису в значении
+Селектор атрибута по дефису в значении применяет стиль к элементу, значения атрибута которого разделены дефисом.
+
+Пример 
+Давайте найдем все элементы, у которых в значениях, разделенных дефисом, есть text и перекрасим их в красный цвет:
+
+
+```
+<p class="text-main-header">text1</p>
+
+<p class="text-content">text2</p>
+
+<p class="test-main">text3</p>
+
+<p class="tag-test">text4</p>
+
+p[class|="text"] {
+	color: red;
 }
 ```
 

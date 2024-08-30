@@ -2224,6 +2224,24 @@ div p.some_class {
 ```
 
 
+### Селекторы атрибутов в CSS ⊗mkPmSlAS
 
+Изучите теорию по следующим ссылкам:
+
+name value start end text variant hyphen
+
+https://code.mu/ru/markup/manual/css/selector/attribute/name/
+
+https://code.mu/ru/markup/manual/css/selector/attribute/value/
+
+https://code.mu/ru/markup/manual/css/selector/attribute/start/
+
+https://code.mu/ru/markup/manual/css/selector/attribute/end/
+
+https://code.mu/ru/markup/manual/css/selector/attribute/text/
+
+https://code.mu/ru/markup/manual/css/selector/attribute/variant/
+ 
+https://code.mu/ru/markup/manual/css/selector/attribute/hyphen/
 
 

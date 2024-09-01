@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="0">
+            <File firstVisibleLine="2514" xOffset="0" scrollWidth="4467" startPos="75105" endPos="75105" selMode="0" offset="0" wrapCount="1" lang="Markdown (preinstalled)" encoding="-1" userReadOnly="no" filename="C:\Users\jim\Documents\&#x041A;&#x0443;&#x0440;&#x0441;&#x044B;-&#x0422;&#x0440;&#x0435;&#x043F;&#x0430;&#x0447;&#x0435;&#x0432;\trepachev\CSS\&#x0411;&#x0430;&#x0437;&#x043E;&#x0432;&#x044B;&#x0439;+CSS.md" backupFilePath="" originalFileLastModifTimestamp="-20245286" originalFileLastModifTimestampHigh="31128660" tabColourId="-1" RTL="no" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="512" mapWrapIndentMode="-1" mapIsWrap="no">
+                <Mark line="1819" />
+            </File>
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

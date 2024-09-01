@@ -1,3 +1,23 @@
+p.answ { 
+	width: 600px;  
+	line-height: 1.2; 
+	font-family: Verdana, Arial, sans-serif; 
+	font-size: 20px; 
+}
+
+div.exam { 
+	width: 600px;  
+	line-height: 1.2; 
+	font-family: Arial, sans-serif; 
+	font-size: 20px; 
+}
+
+code { 
+	color: blue; 
+	font-family: courier, monospace, sans-serif; 
+}
+
+
 p b i {
 	color: red;
 }

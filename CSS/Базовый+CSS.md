@@ -2528,3 +2528,58 @@ a:hover {
 ### Сложные селекторы с состояниями ссылок в CSS
 
 https://code.mu/ru/markup/book/prime/theory/link-complex-selectors/
+
+Все сложные селекторы, которые мы изучали ранее, можно применять и для ссылок.
+
+Давайте посмотрим на примере. Пусть наши ссылки находятся в блоке с заданным id:
+
+```
+<div id="block">
+	<a href="#">link</a>
+	<a href="#">link</a>
+	<a href="#">link</a>
+</div>
+```
+
+Давайте зададим стили для ссылок из этого блока:
+
+```
+#block a:link, #block a:visited {
+	color: red;
+}
+
+#block a:hover {
+	text-decoration: none;
+}
+```
+
+Как правило, состояния link и visited не разделяют, поэтому код можно упростить следующим образом:
+
+```
+#block a {
+	color: red;
+}
+
+#block a:hover {
+	text-decoration: none;
+}
+```
+
+Задание ⊗mkPmSlLCS
+
+Расскажите, что выбирает селектор в приведенном ниже коде. Затем напишите HTML код, подходящий под этот селектор. Вот код с селектором:
+
+```
+a {
+	color: red;
+}
+
+a:hover {
+	text-decoration: none;
+}
+```
+
+
+
+
+

@@ -2585,3 +2585,402 @@ a:hover {
 https://code.mu/ru/markup/book/prime/theory/link-class/
 
 
+### Выборка по позиции элементов в CSS
+
+### Концевые элементы  ⊗mkPmSlPS
+
+https://code.mu/ru/markup/book/prime/theory/position-selector/
+
+
+https://code.mu/ru/markup/manual/css/pseudoclass/first-child/
+
+https://code.mu/ru/markup/manual/css/pseudoclass/last-child/
+
+
+### Псевдокласс first-child
+
+
+Псевдокласс first-child выбирает элемент, который является первым потомком родителя.
+
+Синтаксис
+
+```
+селектор:first-child {
+	
+}
+```
+
+Пример 
+
+В данном примере мы сделаем красного цвета тот li, который является первым потомком своего родителя (первым внутри ol):
+
+
+```
+<ol>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ol>
+
+li:first-child {
+	color: red;
+}
+```
+
+
+### Псевдокласс last-child
+
+Псевдокласс last-child выбирает элемент, который является последним потомком родителя.
+
+Синтаксис
+
+```
+селектор:last-child {
+	
+}
+```
+
+Пример 
+
+
+В данном примере мы сделаем красного цвета тот li, который является последним потомком своего родителя (последним внутри ol):
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+
+li:last-child {
+	color: red;
+}
+```
+
+
+Псевдокласс nth-child
+
+Псевдокласс nth-child выбирает элемент, который является n-ным потомком родителя.
+
+Синтаксис
+
+```
+селектор:nth-child(число | odd | even | выражение) {
+	
+}
+```
+
+
+число	Положительное число начиная с 1. Задает номер элемента, к которому мы хотим обратиться. Нумерация элементов начинается с 1.
+
+odd	Нечетные элементы.
+
+even	Четные элементы.
+
+выражение	Можно составлять специальные выражения с буквой n, которая обозначает все целые числа от нуля (не от единицы) до бесконечности. Так, 2n - значит все четные числа (начиная со второго).
+
+Как это понять? Подставляем в n последовательно числа от 0 и так далее: если n = 0, то 2n даст 0 - такого элемента нет (нумерация элементов с 1), если n = 1, то 2n даст 2 - второй элемент, если n = 2, 2n дает 4 - четвертый элемент. Если написать 3n - это будет каждый третий элемент (начиная с третьего), и так далее.
+
+
+
+В данном примере мы сделаем красного цвета тот li, который является 4-тым потомком своего родителя:
+
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+
+li:nth-child(4) {
+	color: red;
+}
+```
+
+Сейчас красными сделаем все четные li:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-child(even) {
+	color: red;
+}
+```
+
+Сейчас красными сделаем все нечетные li:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-child(odd) {
+	color: red;
+}
+```
+
+Сейчас красными сделаем каждую третью li (начиная с третьей):
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-child(3n) {
+	color: red;
+}
+```
+
+В селекторе можно указать диапазон элементов. Допустим, у вас есть список из 20 элементов и нужно выбрать элементы с 7 по 14 включительно. Это можно сделать вот так:
+
+
+```
+<ol>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ol>
+li:nth-child(n+7):nth-child(-n+14) {
+	color: red;
+}
+```
+
+
+### Псевдокласс nth-last-child
+
+Псевдокласс nth-last-child выбирает элемент, который является n-ным потомком родителя, отсчитывая с конца. Ведет себя аналогично nth-child, только отсчет ведется с конца.
+
+Синтаксис
+
+```
+селектор:nth-last-child(число | odd | even | выражение) {
+	
+}
+```
+
+число	Положительное число начиная с 1. Задает номер элемента, к которому мы хотим обратиться. Нумерация элементов начинается с 1.
+
+odd	Нечетные элементы.
+
+even	Четные элементы.
+
+выражение	Можно составлять специальные выражения с буквой n, которая обозначает все целые числа от нуля (не от единицы) до бесконечности. Так, 2n - значит все четные числа (начиная со второго).
+
+Как это понять? Подставляем в n последовательно числа от 0 и так далее: если n = 0, то 2n даст 0 - такого элемента нет (нумерация элементов с 1), если n = 1, то 2n даст 2 - второй элемент, если n = 2, 2n дает 4 - четвертый элемент. Если написать 3n - это будет каждый третий элемент (начиная с третьего), и так далее.
+
+
+
+В данном примере мы сделаем красного цвета тот li, который является 4-тым с конца потомком своего родителя:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-last-child(4) {
+	color: red;
+}
+```
+
+Сейчас красными сделаем все четные с конца li:
+
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-last-child(even) {
+	color: red;
+}
+```
+
+Сейчас красными сделаем все нечетные с конца li:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-last-child(odd) {
+	color: red;
+}
+```
+
+Сейчас красными сделаем каждую третью с конца li:
+
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-last-child(3n) {
+	color: red;
+}
+```
+
+### Псевдокласс only-child
+
+Псевдокласс only-child выбирает элемент, который является единственным потомком родителя.
+
+Синтаксис
+
+```
+селектор:only-child {
+	
+}
+```
+
+Пример
+ 
+В данном примере мы сделаем li красного цвета, если он единственный потомок родителя ul:
+
+
+```
+<ul>
+	<li>list item</li>
+</ul>
+
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+
+li:only-child {
+	color: red;
+}
+
+ul {
+	margin-bottom: 10px;
+}
+```
+
+
+### Псевдокласс empty
+
+Псевдокласс empty задает то, как будет выглядеть пустой элемент (не содержащий текста).
+
+Синтаксис
+
+```
+селектор:empty {
+	
+}
+```
+
+Пример
+ 
+В данном примере последняя li пустая, но все равно будет иметь маркер:
+
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li></li>
+</ul>
+```
+
+
+Пример
+
+ 
+Поменяем поведение для пустого тега li:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li></li>
+</ul>
+
+li:empty {
+	border: 1px solid blue;
+	list-style-type: circle;
+	color: blue;
+	width: 100px;
+}
+```
+
+
+### Спрячем пустые li совсем:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li></li>
+</ul>
+
+li:empty {
+	display: none;
+}
+```
+
+
+###
+
+
+https://code.mu/ru/markup/manual/css/property/empty-cells/
+
+
+### 
+
+
+https://code.mu/ru/markup/book/prime/theory/position-type-selector/
+

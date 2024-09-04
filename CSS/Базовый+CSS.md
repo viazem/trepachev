@@ -2580,6 +2580,8 @@ a:hover {
 ```
 
 
+### Ссылка с классом в CSS ⊗mkPmSlLCls
 
+https://code.mu/ru/markup/book/prime/theory/link-class/
 
 

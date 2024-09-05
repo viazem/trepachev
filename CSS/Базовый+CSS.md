@@ -3460,3 +3460,43 @@ h2:only-of-type {
 }
 ```
 
+
+### Селектор отрицания в CSS ⊗mkPmSlNS
+
+
+https://code.mu/ru/markup/book/prime/theory/negation-selector/
+
+
+
+
+https://code.mu/ru/markup/manual/css/pseudoclass/not/
+
+Псевдокласс not
+
+Псевдокласс not задает отрицание, к примеру, p:not(.last) означает выбрать все абзацы, у которых нет класса last. Вложенные not не работают.
+
+Синтаксис
+
+```
+селектор:not(отрицание) {
+	
+}
+```
+
+Сделаем красного цвета все li, кроме первого:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+
+li:not(:first-child) {
+	color: red;
+}
+
+```
+

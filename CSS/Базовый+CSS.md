@@ -3500,3 +3500,163 @@ li:not(:first-child) {
 
 ```
 
+
+### Установка фонового цвета в CSS ⊗mkPmDcBF
+
+https://code.mu/ru/markup/book/prime/decoration/background-filling/
+
+
+Вы уже умеете менять цвет тексту. Давайте теперь научимся изменять цвет фона. Это делается с помощью свойства background-color, которое принимает те же значения, что и хорошо известное вам color.
+
+Давайте зальем блок оранжевым фоном (цвет текста при этом сделаем белым):
+
+```
+<div id="elem">
+	Lorem ipsum dolor sit amet.
+</div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	color: white;
+	background-color: orange; /* задаем оранжевый цвет фона */
+}
+```
+
+### Основы работы с границами в CSS
+
+Сейчас мы научимся добавлять границу элементам. Это делается при помощи трех свойств: свойство border-width задает толщину границы, border-color - цвет, а border-style задает тип границы.
+
+Первые два свойства работают очевидным образом: border-color принимает цвета в том же формате, что и свойство color, а толщина границы задается в пикселях. А вот свойство border-style принимает значения в виде ключевых слов. Например, значение solid задает сплошную линию.
+
+Сделаем, к примеру, границу толщиной 3 пикселя, в виде сплошной линии, красного цвета:
+
+```
+<div id="elem"></div>
+
+#elem {
+	border-width: 3px;    /* толщина 3px */
+	border-style: solid;  /* в виде линии */
+	border-color: red;    /* красный цвет */
+	width: 300px;
+	height: 100px;
+}
+```
+
+### Сплошная граница в CSS ⊗mkPmDcSldB
+
+https://code.mu/ru/markup/book/prime/decoration/solid-border/
+
+Значение solid устанавливает сплошная линия границы:
+
+```
+<div id="elem"></div>
+
+#elem {
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	width: 300px;
+	height: 100px;
+}
+```
+
+### Точечная граница в CSS ⊗mkPmDcDtdB
+
+https://code.mu/ru/markup/book/prime/decoration/dotted-border/
+
+Чтобы установить линию границы в виде точек следует установить значение dotted:
+
+<div id="elem"></div>
+
+#elem {
+	border-width: 1px;
+	border-style: dotted;
+	border-color: black;
+	width: 300px;
+	height: 100px;
+}
+
+
+### Граница в виде тире в CSS ⊗mkPmDcDsdB
+
+https://code.mu/ru/markup/book/prime/decoration/dashed-border/
+
+Для установки линии границы в виде тире применяется значение dashed:
+
+```
+<div id="elem"></div>
+
+#elem {
+	border-width: 1px;
+	border-style: dashed;
+	border-color: black;
+	width: 300px;
+	height: 100px;
+}
+```
+
+
+### Выпуклая граница в CSS
+
+https://code.mu/ru/markup/book/prime/decoration/ridge-border/
+
+Значение ridge задает границу в виде выпуклой линии:
+
+```
+<div id="elem"></div>
+
+#elem {
+	border-width: 3px;
+	border-style: ridge;
+	border-color: black;
+	width: 300px;
+	height: 100px;
+}
+```
+
+### Двойная граница в CSS  ⊗mkPmDcDblB
+
+https://code.mu/ru/markup/book/prime/decoration/double-border/
+
+Значение double - двойная линия:
+
+
+<div id="elem"></div>
+
+#elem {
+	border-width: 5px;
+	border-style: double;
+	border-color: black;
+	width: 300px;
+	height: 100px;
+}
+
+
+### Свойство-сокращение для границы в CSS ⊗mkPmDcBShP (62 -)
+
+https://code.mu/ru/markup/book/prime/decoration/border-shorthand-property/
+
+Так же, как и для шрифтов, для границ тоже существует свойство-сокращение border, которое мы можем использовать вместо того, чтобы писать 3 разных свойства для толщины, цвета и типа границы. В этом свойстве мы можем просто перечислить значения для границы в любом порядке.
+
+Давайте посмотрим на примере. Пусть у нас есть вот такая граница:
+
+
+#elem {
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	width: 300px;
+	height: 100px;
+}
+
+
+Перепишем ее через свойство-сокращение:
+
+#elem {
+	border: 1px solid red;
+	width: 300px;
+	height: 100px;
+}
+
+

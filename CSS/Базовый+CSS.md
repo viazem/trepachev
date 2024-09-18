@@ -3633,7 +3633,7 @@ https://code.mu/ru/markup/book/prime/decoration/double-border/
 }
 
 
-### Свойство-сокращение для границы в CSS ⊗mkPmDcBShP (62 -)
+### Свойство-сокращение для границы в CSS ⊗mkPmDcBShP
 
 https://code.mu/ru/markup/book/prime/decoration/border-shorthand-property/
 
@@ -3660,3 +3660,72 @@ https://code.mu/ru/markup/book/prime/decoration/border-shorthand-property/
 }
 
 
+
+### Граница для отдельных сторон в CSS ⊗mkPmDcSB
+
+https://code.mu/ru/markup/book/prime/decoration/sides-borders/
+
+Существуют также свойства-сокращения для отдельных сторон: border-left (левая граница), border-right (правая граница), border-top (верхняя граница), border-bottom (нижняя граница).
+
+Давайте сделаем блоку только левую границу с помощью свойства border-left:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	border-left: 1px solid red;
+}
+```
+
+А теперь одновременно сделаем и левую, и правую границы:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	border-left: 1px solid red;
+	border-right: 1px solid red;
+}
+```
+
+
+### Скругление границ блока в CSS ⊗mkPmDcBlRn
+
+https://code.mu/ru/markup/book/prime/decoration/block-rounding/
+
+Сейчас мы научимся скруглять уголки у блока. Для этого следует применять свойство border-radius, принимающее значение в пикселях.
+
+Что означает то, что мы указали скругление, к примеру, в 10px? Это радиус круга, который можно вписать в это скругление. Если у вас нелады с математикой и вам не понятно последнее предложение - забудьте о нем и просто подбирайте скругление на глаз. При некотором опыте это сделать не проблема (измерительного инструмента для измерения скруглений не существует, по крайней мере я о таком не слышал).
+
+Давайте скруглим уголки блоку, задав ему скругление в 10px:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	border: 1px solid red;
+	border-radius: 10px;
+}
+```
+
+
+### Скругление границ фона в CSS ⊗mkPmDcBcRn
+
+Свойство border-radius скругляет не только уголки не границы, но и фона:
+
+```
+<div id="elem"></div>
+
+#elem {
+	border-radius: 20px;
+	width: 300px;
+	height: 100px;
+	background-color: #e4f1ed;
+}
+```

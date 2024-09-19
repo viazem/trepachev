@@ -3715,7 +3715,9 @@ https://code.mu/ru/markup/book/prime/decoration/block-rounding/
 ```
 
 
-### Скругление границ фона в CSS ⊗mkPmDcBcRn
+### 65 Скругление границ фона в CSS ⊗mkPmDcBcRn
+
+https://code.mu/ru/markup/book/prime/decoration/background-rounding/
 
 Свойство border-radius скругляет не только уголки не границы, но и фона:
 
@@ -3727,5 +3729,41 @@ https://code.mu/ru/markup/book/prime/decoration/block-rounding/
 	width: 300px;
 	height: 100px;
 	background-color: #e4f1ed;
+}
+```
+
+
+### 66 Создание круга в CSS
+
+Скругление в половину ширины и высоты сделает круг:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	border: 1px solid red;
+}
+```
+
+### Разные скругления для разных углов CSS
+
+Свойство border-radius может принимать не только одно значение, но и два, три или четыре. Каждое значение будет задавать скругление для своего угла. В следующих уроках мы рассмотрим их более подробно.
+
+
+### 67 Четыре значения скругления для разных углов CSS  ⊗mkPmDcFSR
+
+Если задано четыре значения, то первое значение задает скругление для верхнего левого угла, второе - для верхнего правого, третье - для нижнего правого угла, а четвертое - для нижнего левого угла:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	border: 1px solid red;
+	border-radius: 10px 20px 30px 40px;
 }
 ```

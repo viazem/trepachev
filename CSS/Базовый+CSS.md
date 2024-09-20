@@ -3767,3 +3767,19 @@ https://code.mu/ru/markup/book/prime/decoration/background-rounding/
 	border-radius: 10px 20px 30px 40px;
 }
 ```
+
+
+### Два значения скругления для разных углов CSS ⊗mkPmDcTwSR
+
+https://code.mu/ru/markup/book/prime/decoration/two-sides-rounding/
+
+Если задано два значения, то первое значение задает скругление для для верхнего левого и нижнего правого, второе - верхнего правого и нижнего левого углов:
+
+
+<div id="elem"></div>
+#elem {
+	width: 300px;
+	height: 100px;
+	border: 1px solid red;
+	border-radius: 10px 40px;
+}

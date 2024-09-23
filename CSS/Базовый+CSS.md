@@ -3775,11 +3775,43 @@ https://code.mu/ru/markup/book/prime/decoration/two-sides-rounding/
 
 Если задано два значения, то первое значение задает скругление для для верхнего левого и нижнего правого, второе - верхнего правого и нижнего левого углов:
 
-
+```
 <div id="elem"></div>
+
 #elem {
 	width: 300px;
 	height: 100px;
 	border: 1px solid red;
 	border-radius: 10px 40px;
+}
+```
+
+
+### Три значения скругления для разных углов в CSS  ⊗mkPmDcThSR
+
+https://code.mu/ru/markup/book/prime/decoration/three-sides-rounding/
+
+Если задано три значения, то первое значение задает скругление для верхнего левого угла, второе - одновременно для верхнего правого и нижнего левого, а третье - для нижнего правого угла:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	border: 1px solid red;
+	border-radius: 10px 20px 30px;
+}
+```
+
+
+### Скругленные уголки в процентах в CSS
+Можно задавать скругление в процентах:
+
+<div id="elem"></div>
+#elem {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+	border-radius: 10%;
 }

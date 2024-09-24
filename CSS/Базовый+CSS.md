@@ -3806,12 +3806,298 @@ https://code.mu/ru/markup/book/prime/decoration/three-sides-rounding/
 
 
 ### Скругленные уголки в процентах в CSS
+
+https://code.mu/ru/markup/book/prime/decoration/percentage-rounding/
+
 Можно задавать скругление в процентах:
 
+```
 <div id="elem"></div>
+
+
 #elem {
 	width: 200px;
 	height: 200px;
 	border: 1px solid red;
 	border-radius: 10%;
 }
+```
+
+### Создание круга при скруглении в процентах в CSS ⊗mkPmDcPRC
+
+https://code.mu/ru/markup/book/prime/decoration/percentage-rounding-circle/
+
+Для того, чтобы получился круг, можно задать скругление в 50%:
+
+```
+<div id="elem"></div>
+#elem {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+	border-radius: 50%;
+}
+```
+
+
+### Картинка для фона в CSS  ⊗mkPmDcBI
+
+https://code.mu/ru/markup/book/prime/decoration/background-images/
+
+Изучите теорию по следующим ссылкам:
+
+background-image
+
+https://code.mu/ru/markup/manual/css/property/background-image/
+
+### Свойство background-image
+
+
+https://code.mu/ru/markup/manual/css/property/background-image/
+
+Свойство background-image задает фоновую картинку элементу. По умолчанию картинка замостит своими копиями весь блок, однако, это поведение можно отменить с помощью свойства background-repeat.
+
+Синтаксис
+
+```
+селектор {
+	background-image: url(путь к картинке);
+}
+
+селектор {
+	background-image: none;
+}
+```
+
+Значения
+
+Значение	Описание
+
+url			Путь к файлу с картинкой. Название картинки может быть в двойных кавычках, одинарных и вообще без кавычек.
+
+none		Отменяет фоновую картинку для элемента.
+Значение по умолчанию: none.
+
+
+Пример 
+
+
+Зададим фоновую картинку с помощью background-image, запретив ее повторение с помощью свойства background-repeat:
+
+```
+<div id="elem"></div>
+#elem {
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 3px solid black;
+}
+```
+
+Пример
+ 
+Без background-repeat фоновая картинка замостит собой весь блок:
+
+```
+<div id="elem"></div>
+#elem {
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 3px solid black;
+}
+```
+
+
+Пример 
+
+Можно одновременно задавать фоновую картинку и задавать фоновый цвет с помощью background-color. В этом случае там, где не будет картинки фона - будет фоновый цвет:
+
+```
+<div id="elem"></div>
+#elem {
+	background-color: orange;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 3px solid black;
+}
+```
+
+Смотрите также
+свойство background,
+
+### Свойство background
+
+https://code.mu/ru/markup/manual/css/property/background/
+
+Свойство background задает одновременно все свойства фона: background-attachment, background-color, background-image, background-position, background-repeat, background-size, background-origin, background-clip.
+
+Порядок свойств значения не имеет. Ненужные свойства можно опускать - в этом случае оно примет значение по умолчанию. Свойства background-position и background-size задаются через слеш и в этом случае порядок имеет значение (сначала позиция, потом размер).
+
+Также свойство background принимает значение no
+ne, соответствующее отсутствию фона.
+
+Синтаксис
+
+```
+селектор {
+	background: сокращаемые свойства;
+}
+```
+
+### Повторение картинки фона в CSS
+
+https://code.mu/ru/markup/book/prime/decoration/background-image-repeat/
+
+Изучите теорию по следующим ссылкам:
+
+background-repeat
+
+
+### Свойство background-repeat
+
+https://code.mu/ru/markup/manual/css/property/background-repeat/
+
+Свойство background-repeat задает каким образом повторять фоновую картинку элемента. По умолчанию картинка повторяется и по оси X, и по оси Y, таким образом покрывая собой всю доступную область.
+
+Синтаксис
+
+```
+селектор {
+	background-repeat: no-repeat | repeat | repeat-x | repeat-y | space | round;
+}
+```
+
+Значения
+
+Значение	Описание
+
+no-repeat	Картинка не будет повторяться вообще.
+
+
+repeat-x	Картинка будет повторяться по оси X.
+
+repeat-y	Картинка будет повторяться по оси Y.
+
+repeat	Картинка будет повторяться по оси X и по оси Y.
+
+space	Картинка повторится столько раз, чтобы полностью заполнить область, если это не удается, между 
+
+картинками добавляется пустое пространство.
+
+round	Картинка повторится так, чтобы в области поместилось целое число рисунков, если это не удается 
+
+
+сделать, то фоновые рисунки масштабируются.
+
+
+Значение по умолчанию: repeat - покрывает узором весь экран.
+
+Пример 
+
+По умолчанию фоновая картинка замостит собой весь элемент:
+
+```
+<div id="elem"></div>
+#elem {
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте сделаем так, чтобы картинка не повторялась:
+
+```
+<div id="elem"></div>
+#elem {
+	background-repeat: no-repeat;
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+А теперь пусть картинка повторяется по оси X:
+
+```
+<div id="elem"></div>
+#elem {
+	background-repeat: repeat-x;
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+А теперь по оси Y:
+
+```
+<div id="elem"></div>
+#elem {
+	background-repeat: repeat-y;
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+Повторяющиеся по осям картинки можно позиционировать с помощью свойства background-position:
+
+```
+<div id="elem"></div>
+#elem {
+	background-repeat: repeat-y;
+	background-position: top center;
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+Посмотрим, как работает значение space:
+
+```
+<div id="elem"></div>
+#elem {
+	background-repeat: space;
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+Посмотрим, как работает значение round:
+
+```
+<div id="elem"></div>
+#elem {
+	background-repeat: round;
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+

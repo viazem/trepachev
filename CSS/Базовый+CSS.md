@@ -4101,3 +4101,214 @@ round	Картинка повторится так, чтобы в области
 }
 ```
 
+
+### Другие свойства для фона в CSS ⊗mkPmDcBIP
+
+https://code.mu/ru/markup/book/prime/decoration/background-image-propeties/
+
+Изучите теорию по следующим ссылкам:
+
+background-position 
+
+https://code.mu/ru/markup/manual/css/property/background-position/
+
+background-size 
+
+background-attachment 
+
+background-clip 
+
+background-origin 
+
+background
+
+Изучите указанные свойства. Самостоятельно потренируйтесь работать с каждым из них.
+
+
+
+
+
+
+
+
+### Свойство background-position
+
+https://code.mu/ru/markup/manual/css/property/background-position/
+
+Свойство background-position задает местоположение фоновой картинки элемента. Местоположение можно задавать с помощью любых единиц для размеров. Первое значение обозначает отступ слева, второе - отступ сверху.
+
+Можно также задавать положение ключевыми словами. В этом случае порядок значений не важен. Ключевые слова для вертикали: top, center, bottom. Ключевые слова по горизонтали: left, center, right.
+
+Как пользоваться ключевыми словами
+
+Чтобы разместить картинку ключевым словом, нужно указать одно значение для вертикали и одно для горизонтали. К примеру, если указать значение top right, то картинка станет сверху справа.
+
+Порядок слов неважен: можно написать top right, а можно - right top. Если есть ключевое слово center - его можно опускать. Например, top center, все равно что просто top. А center center все равно что просто center.
+
+Синтаксис
+
+```
+селектор {
+	background-position: два значения через пробел;
+}
+```
+
+
+Пример
+ 
+По умолчанию фоновая картинка будет в верхнем левом углу:
+
+```
+<div id="elem"></div>
+#elem {
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Давайте разместим фоновую картинку в верхний правый угол:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: top right;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте разместим фоновую картинку в нижний правый угол:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: bottom right;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте разместим фоновую картинку справа и по центру по вертикали:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: right center;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте разместим фоновую картинку по центру блока:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: center center;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+Давайте разместим фоновую картинку на расстоянии 20px слева и 40px сверху:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: 20px 40px;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+Давайте разместим фоновую картинку на расстоянии 90% слева и 100% сверху:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: 90% 100%;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте разместим фоновую картинку на расстоянии 30px слева и по снизу по вертикали:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: 30px bottom;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте разместим фоновую картинку на расстоянии 30px слева и по центру по вертикали:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: 30px center;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте разместим фоновую картинку на расстоянии 30px сверху и по центру по горизонтали:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: center 30px;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+

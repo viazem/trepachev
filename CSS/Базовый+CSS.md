@@ -1819,6 +1819,8 @@ https://code.mu/ru/markup/book/prime/theory/selectors-combination-training/
 
 ### Приоритет селекторов CSS ⊗mkPmSlSP
 
+TODO: Приоритет селекторов CSS ⊗mkPmSlSP
+
 https://code.mu/ru/markup/book/prime/theory/selectors-priority/
 
 
@@ -1842,7 +1844,7 @@ p {
 
 https://code.mu/ru/markup/book/prime/theory/property-conflict-note/
 
-Описанное в предыдущем уроке относится только к конфликту свойств. То есть к случаю, когда и в одном селекторе, и во втором есть одинаковые свойства. Если свойства разные, то просто применятся свойства и одного, и второго селектора.
+Описанное в предыдущем уроке относится только к *конфликту свойств*. То есть к случаю, когда и в одном селекторе, и во втором есть одинаковые свойства. Если свойства разные, то просто применятся свойства и одного, и второго селектора.
 
 
 ### Правила специфичности в CSS 
@@ -1964,6 +1966,7 @@ p {
 #block {
 	color: red;
 }
+
 .text {
 	color: green; /* применится этот цвет */
 }
@@ -2154,6 +2157,8 @@ https://code.mu/ru/markup/book/prime/theory/universal-selector/
 Универсальный селектор `*` позволяет выбирать все элементы.
 
 Пример 
+
+
 Давайте выберем все элементы и покрасим их в красный цвет:
 
 ```
@@ -2230,6 +2235,7 @@ div p.some_class {
 
 name value start end text variant hyphen
 
+
 https://code.mu/ru/markup/manual/css/selector/attribute/name/
 
 https://code.mu/ru/markup/manual/css/selector/attribute/value/
@@ -2241,7 +2247,2068 @@ https://code.mu/ru/markup/manual/css/selector/attribute/end/
 https://code.mu/ru/markup/manual/css/selector/attribute/text/
 
 https://code.mu/ru/markup/manual/css/selector/attribute/variant/
- 
+
 https://code.mu/ru/markup/manual/css/selector/attribute/hyphen/
+
+
+
+### Селектор по имени атрибута
+
+https://code.mu/ru/markup/manual/css/selector/attribute/name/
+
+Селектор по имени атрибута задает стиль элементу, у которого есть только указанный атрибут тега.
+
+Пример
+ 
+Давайте обратимся к тегу <input>, с атрибутом type, и зададим ему голубой цвет фона:
+
+
+```
+<p>
+	<label>Enter text</label>
+	<input>
+</p>
+
+<p>
+	<label>Enter number</label>
+	<input type="number">
+</p>
+
+input[type] {
+	background-color: #C2DDFD;
+}
+```
+
+
+### Селектор по значению атрибута
+
+https://code.mu/ru/markup/manual/css/selector/attribute/value/
+
+Селектор по значению атрибута позволяет выбрать элементы по наличию у них определенного атрибута или его значения и применить к ним нужный стиль.
+
+Пример
+ 
+Давайте обратимся к тегу <input>, у которого значение атрибута type, равно text и зададим ему голубой цвет фона:
+
+```
+<p>
+	<label>Enter text</label>
+	<input type="text">
+</p>
+
+<p>
+	<label>Enter number</label>
+	<input type="number">
+</p>
+
+input[type="text"] {
+	background-color: #C2DDFD;
+}
+```
+
+### Селектор по началу значения атрибута
+
+https://code.mu/ru/markup/manual/css/selector/attribute/start/
+
+Селектор по началу значения атрибута применяет стиль к элементу, у которого значение атрибута тега начинается с определенного текста.
+
+Пример
+ 
+Давайте обратимся к тегу <a>, у которого значение атрибута href начинается на https и перекрасим его в красный цвет:
+
+```
+<a href="file.html">link1</a>
+
+<a href="https://code.mu">link2</a>
+
+a[href^="https://"] {
+	color: red;
+}
+```
+
+
+### Селектор по концу значения атрибута
+
+https://code.mu/ru/markup/manual/css/selector/attribute/end/
+
+Селектор по концу значения атрибута применяет стиль к элементу, у которого значение атрибута тега заканчивается на определенный текст.
+
+Пример
+ 
+Давайте обратимся к тегу <p>, у которого значение атрибута title заканчивается на .html и перекрасим его в красный цвет:
+
+```
+<a href="file.html">link1</a>
+
+<a href="https://code.mu">link2</a>
+
+a[href$=".html"] {
+	color: red;
+}
+```
+
+### Селектор атрибута по тексту
+
+https://code.mu/ru/markup/manual/css/selector/attribute/text/
+
+Селектор атрибута по тексту применяет стиль к элементу, у которого значение атрибута тега содержит определенный текст.
+
+Пример
+ 
+Давайте найдем ссылки, содержащие в атрибутах test, и перекрасим их в зеленый цвет:
+
+```
+<a href="https://test.com">link1</a>  <!-- выбор -->
+
+<a href="https://code.mu">link2</a>
+
+<a href="http://my-test.com">link3</a>  <!-- выбор -->
+
+a[href*="test"] {
+	color: green;
+}
+```
+
+### Селектор по одному из значений атрибута
+
+https://code.mu/ru/markup/manual/css/selector/attribute/variant/
+
+Селектор по одному из значений атрибута задает стиль элементу, у которого в атрибуте есть хотя бы одно из указанных значений. При этом все значения атрибута *должны быть разделены пробелом*.                  
+
+Пример 
+
+Давайте найдем все `<p>`, содержащие в одном из значений test, и перекрасим их в синий цвет:
+
+
+```
+<p class="test main">text1</p> <!-- выбор -->
+
+<p class="text">text2</p>
+
+<p class="tag test">text3</p> <!-- выбор -->
+
+p[class~="test"] {
+	color: blue;
+}
+```
+
+
+### Селектор атрибута по дефису в значении
+
+Селектор атрибута по дефису в значении применяет стиль к элементу, значения атрибута которого разделены дефисом.
+
+Пример
+ 
+Давайте найдем все элементы, у которых в значениях, разделенных дефисом, есть text и перекрасим их в красный цвет:
+
+
+```
+<p class="text-main-header">text1</p>
+
+<p class="text-content">text2</p>
+
+<p class="test-main">text3</p>
+
+<p class="tag-test">text4</p>
+
+p[class|="text"] {
+	color: red;
+}
+```
+
+[!Посмотри](https://www.dev-notes.ru/articles/css/css-selectors-cheat-sheet-for-beginners/?ysclid=m0idn5nahv344155976)
+
+<https://wp-kama.ru/id_5875/30-css-selektorov.html?ysclid=m0id9c7vxk802106032#attr-float-value>
+
+
+### Состояния ссылок в CSS
+
+https://code.mu/ru/markup/book/prime/theory/link-states/
+
+
+Я думаю, что вы, посещая различные сайты в интернете, обращали внимание на то, что ссылки обычно реагируют на наведение мышкой на них. Такого эффекта можно добиться, задавая поведение ссылок в различных состояниях.
+
+К примеру, вот так - `a:hover` - мы поймаем состояние, когда на ссылку навели курсор мышки. В этот момент мы можем, к примеру, поменять цвет ссылки или убрать/добавить ей подчеркивание. Конструкция `:hover` называется псевдоклассом. Псевдоклассы позволяют отлавливать разные состояния элементов.
+
+Кроме `:hover` есть еще псевдоклассы `:link`, которые отлавливают не посещенную ссылку, и `:visited`, которые отлавливают посещенную ссылку. На некоторых сайтах с их помощью показывают пользователям, где они были, а где - нет. Есть еще и псевдокласс `:active`, который отлавливает следующее состояние: на элемент нажали мышкой, но еще не отпустили.
+
+В следующем примере для ссылки в состоянии `:hover` убирается подчеркивание, в состоянии `:link` задается красный цвет, в состоянии `:visited` - зеленый, в `:active` - голубой. В результате получится, что в начале ссылка будет красного цвета, после нажатия на нее - зеленого, если нажать на нее мышкой и не отпускать - голубого, а если навести мышкой - станет неподчеркнутой:
+
+
+```
+a:link {
+	color: red;
+}
+
+a:visited {
+	color: green;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	color: blue;
+}
+
+<a href="#">link</a>
+```
+
+Решетка `#` в адресе ссылки представляет собой специальный заполнитель, который используют, когда не важно, куда ведет ссылка. При переходе по такой ссылке вы будете попадать на текущую страницу. Можно указывать не одну решетку, а несколько.
+
+
+### Нюансы последовательности состояния ссылок в CSS
+
+https://code.mu/ru/markup/book/prime/theory/nuances-link-states-sequence/
+
+Псевдоклассы ссылок наследуют друг от друга. К примеру, если я уберу подчеркивание для состояния :link, то оно уберется для всех состояний.
+
+Из-за наследования для корректной работы данные псевдоклассы следует размещать именно в таком порядке, как в примере: `:link`, `:visited`, `:hover`, `:active` (ненужные можно не писать). Этот порядок подчиняется следующему мнемоническому правилу: `LoVe HAte`.
+
+
+### Состояния ссылок link и visited в CSS
+
+
+https://code.mu/ru/markup/book/prime/theory/link-visited-states/
+
+Часто состояния :link и :visited объединяют вместе через запятую:
+
+```
+a:link, a:visited {
+	color: red;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	color: blue;
+}
+
+<a href="#">link</a>
+```
+
+В таком случае можно их вообще и не указывать:
+
+```
+a {
+	color: red;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	color: blue;
+}
+
+<a href="#">link</a>
+```
+
+
+### Обычное использование состояния ссылок в CSS
+
+Как правило, указываются состояния для всех типов ссылок одновременно, а потом ниже добавляются особенности поведения ссылки при наведении мышкой, вот так:
+
+```
+a {
+	color: red;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+<a href="#">link</a>
+```
+
+### Сложные селекторы с состояниями ссылок в CSS
+
+https://code.mu/ru/markup/book/prime/theory/link-complex-selectors/
+
+Все сложные селекторы, которые мы изучали ранее, можно применять и для ссылок.
+
+Давайте посмотрим на примере. Пусть наши ссылки находятся в блоке с заданным id:
+
+```
+<div id="block">
+	<a href="#">link</a>
+	<a href="#">link</a>
+	<a href="#">link</a>
+</div>
+```
+
+Давайте зададим стили для ссылок из этого блока:
+
+```
+#block a:link, #block a:visited {
+	color: red;
+}
+
+#block a:hover {
+	text-decoration: none;
+}
+```
+
+Как правило, состояния link и visited не разделяют, поэтому код можно упростить следующим образом:
+
+```
+#block a {
+	color: red;
+}
+
+#block a:hover {
+	text-decoration: none;
+}
+```
+
+Задание ⊗mkPmSlLCS
+
+Расскажите, что выбирает селектор в приведенном ниже коде. Затем напишите HTML код, подходящий под этот селектор. Вот код с селектором:
+
+```
+a {
+	color: red;
+}
+
+a:hover {
+	text-decoration: none;
+}
+```
+
+
+### Ссылка с классом в CSS ⊗mkPmSlLCls
+
+https://code.mu/ru/markup/book/prime/theory/link-class/
+
+
+### Выборка по позиции элементов в CSS
+
+### Концевые элементы  ⊗mkPmSlPS
+
+https://code.mu/ru/markup/book/prime/theory/position-selector/
+
+
+https://code.mu/ru/markup/manual/css/pseudoclass/first-child/
+
+https://code.mu/ru/markup/manual/css/pseudoclass/last-child/
+
+
+### Псевдокласс first-child
+
+
+Псевдокласс first-child выбирает элемент, который является первым потомком родителя.
+
+Синтаксис
+
+```
+селектор:first-child {
+	
+}
+```
+
+Пример 
+
+В данном примере мы сделаем красного цвета тот li, который является первым потомком своего родителя (первым внутри ol):
+
+
+```
+<ol>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ol>
+
+li:first-child {
+	color: red;
+}
+```
+
+
+### Псевдокласс last-child
+
+Псевдокласс last-child выбирает элемент, который является последним потомком родителя.
+
+Синтаксис
+
+```
+селектор:last-child {
+	
+}
+```
+
+Пример 
+
+
+В данном примере мы сделаем красного цвета тот li, который является последним потомком своего родителя (последним внутри ol):
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+
+li:last-child {
+	color: red;
+}
+```
+
+
+Псевдокласс nth-child
+
+Псевдокласс nth-child выбирает элемент, который является n-ным потомком родителя.
+
+Синтаксис
+
+```
+селектор:nth-child(число | odd | even | выражение) {
+	
+}
+```
+
+
+число	Положительное число начиная с 1. Задает номер элемента, к которому мы хотим обратиться. Нумерация элементов начинается с 1.
+
+odd	Нечетные элементы.
+
+even	Четные элементы.
+
+выражение	Можно составлять специальные выражения с буквой n, которая обозначает все целые числа от нуля (не от единицы) до бесконечности. Так, 2n - значит все четные числа (начиная со второго).
+
+Как это понять? Подставляем в n последовательно числа от 0 и так далее: если n = 0, то 2n даст 0 - такого элемента нет (нумерация элементов с 1), если n = 1, то 2n даст 2 - второй элемент, если n = 2, 2n дает 4 - четвертый элемент. Если написать 3n - это будет каждый третий элемент (начиная с третьего), и так далее.
+
+
+
+В данном примере мы сделаем красного цвета тот li, который является 4-тым потомком своего родителя:
+
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+
+li:nth-child(4) {
+	color: red;
+}
+```
+
+Сейчас красными сделаем все четные li:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-child(even) {
+	color: red;
+}
+```
+
+Сейчас красными сделаем все нечетные li:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-child(odd) {
+	color: red;
+}
+```
+
+Сейчас красными сделаем каждую третью li (начиная с третьей):
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-child(3n) {
+	color: red;
+}
+```
+
+В селекторе можно указать диапазон элементов. Допустим, у вас есть список из 20 элементов и нужно выбрать элементы с 7 по 14 включительно. Это можно сделать вот так:
+
+
+```
+<ol>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ol>
+li:nth-child(n+7):nth-child(-n+14) {
+	color: red;
+}
+```
+
+
+### Псевдокласс nth-last-child
+
+Псевдокласс nth-last-child выбирает элемент, который является n-ным потомком родителя, отсчитывая с конца. Ведет себя аналогично nth-child, только отсчет ведется с конца.
+
+Синтаксис
+
+```
+селектор:nth-last-child(число | odd | even | выражение) {
+	
+}
+```
+
+число	Положительное число начиная с 1. Задает номер элемента, к которому мы хотим обратиться. Нумерация элементов начинается с 1.
+
+odd	Нечетные элементы.
+
+even	Четные элементы.
+
+выражение	Можно составлять специальные выражения с буквой n, которая обозначает все целые числа от нуля (не от единицы) до бесконечности. Так, 2n - значит все четные числа (начиная со второго).
+
+Как это понять? Подставляем в n последовательно числа от 0 и так далее: если n = 0, то 2n даст 0 - такого элемента нет (нумерация элементов с 1), если n = 1, то 2n даст 2 - второй элемент, если n = 2, 2n дает 4 - четвертый элемент. Если написать 3n - это будет каждый третий элемент (начиная с третьего), и так далее.
+
+
+
+В данном примере мы сделаем красного цвета тот li, который является 4-тым с конца потомком своего родителя:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-last-child(4) {
+	color: red;
+}
+```
+
+Сейчас красными сделаем все четные с конца li:
+
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-last-child(even) {
+	color: red;
+}
+```
+
+Сейчас красными сделаем все нечетные с конца li:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-last-child(odd) {
+	color: red;
+}
+```
+
+Сейчас красными сделаем каждую третью с конца li:
+
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+li:nth-last-child(3n) {
+	color: red;
+}
+```
+
+### Псевдокласс only-child
+
+Псевдокласс only-child выбирает элемент, который является единственным потомком родителя.
+
+Синтаксис
+
+```
+селектор:only-child {
+	
+}
+```
+
+Пример
+ 
+В данном примере мы сделаем li красного цвета, если он единственный потомок родителя ul:
+
+
+```
+<ul>
+	<li>list item</li>
+</ul>
+
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+
+li:only-child {
+	color: red;
+}
+
+ul {
+	margin-bottom: 10px;
+}
+```
+
+
+### Псевдокласс empty
+
+Псевдокласс empty задает то, как будет выглядеть пустой элемент (не содержащий текста).
+
+Синтаксис
+
+```
+селектор:empty {
+	
+}
+```
+
+Пример
+ 
+В данном примере последняя li пустая, но все равно будет иметь маркер:
+
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li></li>
+</ul>
+```
+
+
+Пример
+
+ 
+Поменяем поведение для пустого тега li:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li></li>
+</ul>
+
+li:empty {
+	border: 1px solid blue;
+	list-style-type: circle;
+	color: blue;
+	width: 100px;
+}
+```
+
+
+### Спрячем пустые li совсем:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li></li>
+</ul>
+
+li:empty {
+	display: none;
+}
+```
+
+
+### Свойство empty-cells
+
+https://code.mu/ru/markup/manual/css/property/empty-cells/
+
+Свойство empty-cells указывает браузеру как отображать фон и границу пустых ячеек td или ячеек th HTML таблицы: показывать или нет.
+
+Ячейка считается пустой в следующих случаях: нет вообще никаких символов, в ячейке содержится только пробел (один или несколько), перевод строки или символ табуляции, либо свойство visibility установлено как hidden.
+
+Чтобы сделать ячейку не пустой, но при этом без видимого текста, используют следующий прием: в ячейку записывают неразрывный пробел &nbsp;.
+
+Свойство не работает, если задан border-collapse в значении collapse.
+
+
+Синтаксис
+
+```
+селектор {
+	empty-cells: show | hide;
+}
+```
+
+Значения
+
+Значение	Описание
+
+show	Фон и граница показываются у пустой ячейки.
+
+hide	Фон и граница не показываются у пустой ячейки.
+
+
+Значение по умолчанию: show.
+
+
+Пример . Значение show
+
+Сейчас в таблице некоторые ячейки пустые, но они все равно имеют границу и фон:
+
+```
+<table>
+	<tr>
+		<td>cell</td>
+		<td></td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>cell</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+</table>
+
+table {
+	width: 400px;
+	empty-cells: show;
+}
+
+td {
+	border: 1px solid black;
+	background-color: #f3f3f3;
+	text-align: center;
+}
+```
+
+Значение hide
+
+А вот теперь пустые ячейки не будут иметь фон и границу:
+
+```
+<table>
+	<tr>
+		<td>cell</td>
+		<td></td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>cell</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+</table>
+
+table {
+	width: 400px;
+	empty-cells: hide;
+}
+
+td {
+	border: 1px solid black;
+	background-color: #f3f3f3;
+	text-align: center;
+}
+```
+
+
+
+
+### Выборка по позиции и типу элементов в CSS ⊗mkPmSlPTS
+
+
+https://code.mu/ru/markup/book/prime/theory/position-type-selector/
+
+
+
+### Псевдокласс first-of-type
+
+https://code.mu/ru/markup/manual/css/pseudoclass/first-of-type/
+
+Псевдокласс first-of-type выбирает элемент, который является первым потомком родителя заданного типа. То есть, если написать h2:first-of-type - найдется первый h2 в родителе (в отличии от first-child, который найдет только тот h2, который стоит самым первым в родителе).
+
+Синтаксис
+
+```
+селектор:first-of-type {
+	
+}
+```
+
+Пример
+ 
+Найдем абзац, который является первым абзацем в родителе:
+
+```
+<div>
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+</div>
+
+p:first-of-type {
+	color: red;
+}
+```
+
+
+### Псевдокласс last-of-type
+
+https://code.mu/ru/markup/manual/css/pseudoclass/last-of-type/
+
+Псевдокласс last-of-type выбирает элемент, который является последним потомком родителя заданного типа. То есть, если я напишу h2:last-of-type - найдется последний h2 в родителе (в отличии от last-child, который найдет только тот h2, который стоит самым последним в родителе).
+
+Синтаксис
+
+```
+селектор:last-of-type {
+	
+}
+```
+
+Пример 
+
+
+Найдем заголовок h2, который является последним h2 в родителе:
+
+```
+<div>
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+</div>
+
+
+h2:last-of-type {
+	color: red;
+}
+```
+
+
+### Псевдокласс nth-of-type
+
+https://code.mu/ru/markup/manual/css/pseudoclass/nth-of-type/
+
+Псевдокласс nth-of-type выбирает элемент, который является n-ным потомком заданного типа.
+
+То есть, если я напишу h2:nth-of-type(4) - найдется 4-тый h2 в родителе (в отличии от nth-child, который найдет только тот h2, который является 4-тым элементов в родителе).
+
+Синтаксис
+
+
+```
+селектор:nth-of-type(число | odd | even | выражение){
+
+}
+```
+
+Значения
+
+Значение	Описание
+
+число	Положительное число начиная с 1. Задает номер элемента, к которому мы хотим обратиться. Нумерация элементов начинается с 1.
+
+odd	Нечетные элементы.
+
+even	Четные элементы.
+
+выражение	Можно составлять специальные выражения с буквой n, которая обозначает все целые числа от нуля (не от единицы) до бесконечности. Так, 2n - значит все четные числа (начиная со второго).
+
+Как это понять? Подставляем в n последовательно числа от 0 и так далее: если n = 0, то 2n даст 0 - такого элемента нет (нумерация элементов с 1), если n = 1, то 2n даст 2 - второй элемент, если n = 2, 2n дает 4 - четвертый элемент. Если написать 3n - это будет каждый третий элемент (начиная с третьего), и так далее
+
+
+Пример 
+
+Найдем h2, который является 2-ым h2 в родителе:
+
+```
+<div>
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+</div>
+
+h2:nth-of-type(2) {
+	color: red;
+}
+```
+
+Результат выполнения кода:
+
+
+Пример
+ 
+Найдем все четные h2:
+
+```
+<div>
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+</div>
+
+h2:nth-of-type(even) {
+	color: red;
+}
+```
+
+Результат выполнения кода:
+
+
+Пример
+ 
+Найдем все нечетные h2:
+
+```
+<div>
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+</div>
+
+h2:nth-of-type(odd) {
+	color: red;
+}
+```
+
+Результат выполнения кода:
+
+
+### Псевдокласс nth-last-of-type
+
+https://code.mu/ru/markup/manual/css/pseudoclass/nth-last-of-type/
+
+Псевдокласс nth-last-of-type выбирает элемент, который является n-ным потомком родителя заданного типа, отсчитывая с конца. Ведет себя аналогично nth-of-type, только отсчет ведется с конца.
+
+Синтаксис
+
+```
+селектор:nth-last-of-type(число | odd | even | выражение) {
+	
+}
+```
+
+Значения
+
+Значение	Описание
+
+число	Положительное число начиная с 1. Задает номер элемента, к которому мы хотим обратиться. 
+Нумерация элементов начинается с 1.
+
+odd	Нечетные элементы.
+
+even	Четные элементы.
+
+выражение	Можно составлять специальные выражения с буквой n, которая обозначает все целые числа от нуля (не от единицы) до бесконечности. Так, 2n - значит все четные числа (начиная со второго).
+
+Как это понять? Подставляем в n последовательно числа от 0 и так далее: если n = 0, то 2n даст 0 - такого элемента нет (нумерация элементов с 1), если n = 1, то 2n даст 2 - второй элемент, если n = 2, 2n дает 4 - четвертый элемент. Если написать 3n - это будет каждый третий элемент (начиная с третьего), и так далее.
+
+
+Пример 
+
+Найдем h2, который является 2-ым h2 в родителе с конца:
+
+```
+<div>
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+</div>
+
+h2:nth-last-of-type(2) {
+	color: red;
+}
+```
+
+Результат выполнения кода:
+
+
+Пример 
+
+Найдем все четные h2 с конца:
+
+```
+<div>
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+</div>
+
+h2:nth-last-of-type(even) {
+	color: red;
+}
+```
+
+Результат выполнения кода:
+
+
+Пример 
+
+Найдем все нечетные h2 с конца:
+
+```
+<div>
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+</div>
+
+h2:nth-last-of-type(odd) {
+	color: red;
+}
+```
+
+Результат выполнения кода:
+
+
+### Псевдокласс only-of-type
+
+https://code.mu/ru/markup/manual/css/pseudoclass/only-of-type/
+
+Псевдокласс only-of-type выбирает элемент, который является единственным потомком заданного типа.
+
+Синтаксис
+
+```
+селектор:only-of-type {
+	
+}
+```
+
+Пример
+ 
+Покрасим заголовок h2 в красный цвет, если он является единственным h2 в своем родителе:
+
+```
+<div>
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	<p>абзац</p>
+	<p>абзац</p>
+</div>
+
+<div>
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	
+	<h2>заголовок</h2>
+	<p>абзац</p>
+	<p>абзац</p>
+</div>
+
+div {
+	border: 1px dashed black;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+
+h2:only-of-type {
+	color: red;
+}
+```
+
+
+### Селектор отрицания в CSS ⊗mkPmSlNS
+
+
+https://code.mu/ru/markup/book/prime/theory/negation-selector/
+
+
+
+
+https://code.mu/ru/markup/manual/css/pseudoclass/not/
+
+Псевдокласс not
+
+Псевдокласс not задает отрицание, к примеру, p:not(.last) означает выбрать все абзацы, у которых нет класса last. Вложенные not не работают.
+
+Синтаксис
+
+```
+селектор:not(отрицание) {
+	
+}
+```
+
+Сделаем красного цвета все li, кроме первого:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+
+li:not(:first-child) {
+	color: red;
+}
+
+```
+
+
+### Установка фонового цвета в CSS ⊗mkPmDcBF
+
+https://code.mu/ru/markup/book/prime/decoration/background-filling/
+
+
+Вы уже умеете менять цвет тексту. Давайте теперь научимся изменять цвет фона. Это делается с помощью свойства background-color, которое принимает те же значения, что и хорошо известное вам color.
+
+Давайте зальем блок оранжевым фоном (цвет текста при этом сделаем белым):
+
+```
+<div id="elem">
+	Lorem ipsum dolor sit amet.
+</div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	color: white;
+	background-color: orange; /* задаем оранжевый цвет фона */
+}
+```
+
+### Основы работы с границами в CSS
+
+Сейчас мы научимся добавлять границу элементам. Это делается при помощи трех свойств: свойство border-width задает толщину границы, border-color - цвет, а border-style задает тип границы.
+
+Первые два свойства работают очевидным образом: border-color принимает цвета в том же формате, что и свойство color, а толщина границы задается в пикселях. А вот свойство border-style принимает значения в виде ключевых слов. Например, значение solid задает сплошную линию.
+
+Сделаем, к примеру, границу толщиной 3 пикселя, в виде сплошной линии, красного цвета:
+
+```
+<div id="elem"></div>
+
+#elem {
+	border-width: 3px;    /* толщина 3px */
+	border-style: solid;  /* в виде линии */
+	border-color: red;    /* красный цвет */
+	width: 300px;
+	height: 100px;
+}
+```
+
+### Сплошная граница в CSS ⊗mkPmDcSldB
+
+https://code.mu/ru/markup/book/prime/decoration/solid-border/
+
+Значение solid устанавливает сплошная линия границы:
+
+```
+<div id="elem"></div>
+
+#elem {
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	width: 300px;
+	height: 100px;
+}
+```
+
+### Точечная граница в CSS ⊗mkPmDcDtdB
+
+https://code.mu/ru/markup/book/prime/decoration/dotted-border/
+
+Чтобы установить линию границы в виде точек следует установить значение dotted:
+
+<div id="elem"></div>
+
+#elem {
+	border-width: 1px;
+	border-style: dotted;
+	border-color: black;
+	width: 300px;
+	height: 100px;
+}
+
+
+### Граница в виде тире в CSS ⊗mkPmDcDsdB
+
+https://code.mu/ru/markup/book/prime/decoration/dashed-border/
+
+Для установки линии границы в виде тире применяется значение dashed:
+
+```
+<div id="elem"></div>
+
+#elem {
+	border-width: 1px;
+	border-style: dashed;
+	border-color: black;
+	width: 300px;
+	height: 100px;
+}
+```
+
+
+### Выпуклая граница в CSS
+
+https://code.mu/ru/markup/book/prime/decoration/ridge-border/
+
+Значение ridge задает границу в виде выпуклой линии:
+
+```
+<div id="elem"></div>
+
+#elem {
+	border-width: 3px;
+	border-style: ridge;
+	border-color: black;
+	width: 300px;
+	height: 100px;
+}
+```
+
+### Двойная граница в CSS  ⊗mkPmDcDblB
+
+https://code.mu/ru/markup/book/prime/decoration/double-border/
+
+Значение double - двойная линия:
+
+
+<div id="elem"></div>
+
+#elem {
+	border-width: 5px;
+	border-style: double;
+	border-color: black;
+	width: 300px;
+	height: 100px;
+}
+
+
+### Свойство-сокращение для границы в CSS ⊗mkPmDcBShP
+
+https://code.mu/ru/markup/book/prime/decoration/border-shorthand-property/
+
+Так же, как и для шрифтов, для границ тоже существует свойство-сокращение border, которое мы можем использовать вместо того, чтобы писать 3 разных свойства для толщины, цвета и типа границы. В этом свойстве мы можем просто перечислить значения для границы в любом порядке.
+
+Давайте посмотрим на примере. Пусть у нас есть вот такая граница:
+
+
+#elem {
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	width: 300px;
+	height: 100px;
+}
+
+
+Перепишем ее через свойство-сокращение:
+
+#elem {
+	border: 1px solid red;
+	width: 300px;
+	height: 100px;
+}
+
+
+
+### Граница для отдельных сторон в CSS ⊗mkPmDcSB
+
+https://code.mu/ru/markup/book/prime/decoration/sides-borders/
+
+Существуют также свойства-сокращения для отдельных сторон: border-left (левая граница), border-right (правая граница), border-top (верхняя граница), border-bottom (нижняя граница).
+
+Давайте сделаем блоку только левую границу с помощью свойства border-left:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	border-left: 1px solid red;
+}
+```
+
+А теперь одновременно сделаем и левую, и правую границы:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	border-left: 1px solid red;
+	border-right: 1px solid red;
+}
+```
+
+
+### Скругление границ блока в CSS ⊗mkPmDcBlRn
+
+https://code.mu/ru/markup/book/prime/decoration/block-rounding/
+
+Сейчас мы научимся скруглять уголки у блока. Для этого следует применять свойство border-radius, принимающее значение в пикселях.
+
+Что означает то, что мы указали скругление, к примеру, в 10px? Это радиус круга, который можно вписать в это скругление. Если у вас нелады с математикой и вам не понятно последнее предложение - забудьте о нем и просто подбирайте скругление на глаз. При некотором опыте это сделать не проблема (измерительного инструмента для измерения скруглений не существует, по крайней мере я о таком не слышал).
+
+Давайте скруглим уголки блоку, задав ему скругление в 10px:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	border: 1px solid red;
+	border-radius: 10px;
+}
+```
+
+
+### 65 Скругление границ фона в CSS ⊗mkPmDcBcRn
+
+https://code.mu/ru/markup/book/prime/decoration/background-rounding/
+
+Свойство border-radius скругляет не только уголки не границы, но и фона:
+
+```
+<div id="elem"></div>
+
+#elem {
+	border-radius: 20px;
+	width: 300px;
+	height: 100px;
+	background-color: #e4f1ed;
+}
+```
+
+
+### 66 Создание круга в CSS
+
+Скругление в половину ширины и высоты сделает круг:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	border: 1px solid red;
+}
+```
+
+### Разные скругления для разных углов CSS
+
+Свойство border-radius может принимать не только одно значение, но и два, три или четыре. Каждое значение будет задавать скругление для своего угла. В следующих уроках мы рассмотрим их более подробно.
+
+
+### 67 Четыре значения скругления для разных углов CSS  ⊗mkPmDcFSR
+
+Если задано четыре значения, то первое значение задает скругление для верхнего левого угла, второе - для верхнего правого, третье - для нижнего правого угла, а четвертое - для нижнего левого угла:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	border: 1px solid red;
+	border-radius: 10px 20px 30px 40px;
+}
+```
+
+
+### Два значения скругления для разных углов CSS ⊗mkPmDcTwSR
+
+https://code.mu/ru/markup/book/prime/decoration/two-sides-rounding/
+
+Если задано два значения, то первое значение задает скругление для для верхнего левого и нижнего правого, второе - верхнего правого и нижнего левого углов:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	border: 1px solid red;
+	border-radius: 10px 40px;
+}
+```
+
+
+### Три значения скругления для разных углов в CSS  ⊗mkPmDcThSR
+
+https://code.mu/ru/markup/book/prime/decoration/three-sides-rounding/
+
+Если задано три значения, то первое значение задает скругление для верхнего левого угла, второе - одновременно для верхнего правого и нижнего левого, а третье - для нижнего правого угла:
+
+```
+<div id="elem"></div>
+
+#elem {
+	width: 300px;
+	height: 100px;
+	border: 1px solid red;
+	border-radius: 10px 20px 30px;
+}
+```
+
+
+### Скругленные уголки в процентах в CSS
+
+https://code.mu/ru/markup/book/prime/decoration/percentage-rounding/
+
+Можно задавать скругление в процентах:
+
+```
+<div id="elem"></div>
+
+
+#elem {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+	border-radius: 10%;
+}
+```
+
+### Создание круга при скруглении в процентах в CSS ⊗mkPmDcPRC
+
+https://code.mu/ru/markup/book/prime/decoration/percentage-rounding-circle/
+
+Для того, чтобы получился круг, можно задать скругление в 50%:
+
+```
+<div id="elem"></div>
+#elem {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+	border-radius: 50%;
+}
+```
+
+
+### Картинка для фона в CSS  ⊗mkPmDcBI
+
+https://code.mu/ru/markup/book/prime/decoration/background-images/
+
+Изучите теорию по следующим ссылкам:
+
+background-image
+
+https://code.mu/ru/markup/manual/css/property/background-image/
+
+### Свойство background-image
+
+
+https://code.mu/ru/markup/manual/css/property/background-image/
+
+Свойство background-image задает фоновую картинку элементу. По умолчанию картинка замостит своими копиями весь блок, однако, это поведение можно отменить с помощью свойства background-repeat.
+
+Синтаксис
+
+```
+селектор {
+	background-image: url(путь к картинке);
+}
+
+селектор {
+	background-image: none;
+}
+```
+
+Значения
+
+Значение	Описание
+
+url			Путь к файлу с картинкой. Название картинки может быть в двойных кавычках, одинарных и вообще без кавычек.
+
+none		Отменяет фоновую картинку для элемента.
+Значение по умолчанию: none.
+
+
+Пример 
+
+
+Зададим фоновую картинку с помощью background-image, запретив ее повторение с помощью свойства background-repeat:
+
+```
+<div id="elem"></div>
+#elem {
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 3px solid black;
+}
+```
+
+Пример
+ 
+Без background-repeat фоновая картинка замостит собой весь блок:
+
+```
+<div id="elem"></div>
+#elem {
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 3px solid black;
+}
+```
+
+
+Пример 
+
+Можно одновременно задавать фоновую картинку и задавать фоновый цвет с помощью background-color. В этом случае там, где не будет картинки фона - будет фоновый цвет:
+
+```
+<div id="elem"></div>
+#elem {
+	background-color: orange;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 3px solid black;
+}
+```
+
+Смотрите также
+свойство background,
+
+### Свойство background
+
+https://code.mu/ru/markup/manual/css/property/background/
+
+Свойство background задает одновременно все свойства фона: background-attachment, background-color, background-image, background-position, background-repeat, background-size, background-origin, background-clip.
+
+Порядок свойств значения не имеет. Ненужные свойства можно опускать - в этом случае оно примет значение по умолчанию. Свойства background-position и background-size задаются через слеш и в этом случае порядок имеет значение (сначала позиция, потом размер).
+
+Также свойство background принимает значение no
+ne, соответствующее отсутствию фона.
+
+Синтаксис
+
+```
+селектор {
+	background: сокращаемые свойства;
+}
+```
+
+### Повторение картинки фона в CSS
+
+https://code.mu/ru/markup/book/prime/decoration/background-image-repeat/
+
+Изучите теорию по следующим ссылкам:
+
+background-repeat
+
+
+### Свойство background-repeat
+
+https://code.mu/ru/markup/manual/css/property/background-repeat/
+
+Свойство background-repeat задает каким образом повторять фоновую картинку элемента. По умолчанию картинка повторяется и по оси X, и по оси Y, таким образом покрывая собой всю доступную область.
+
+Синтаксис
+
+```
+селектор {
+	background-repeat: no-repeat | repeat | repeat-x | repeat-y | space | round;
+}
+```
+
+Значения
+
+Значение	Описание
+
+no-repeat	Картинка не будет повторяться вообще.
+
+
+repeat-x	Картинка будет повторяться по оси X.
+
+repeat-y	Картинка будет повторяться по оси Y.
+
+repeat	Картинка будет повторяться по оси X и по оси Y.
+
+space	Картинка повторится столько раз, чтобы полностью заполнить область, если это не удается, между 
+
+картинками добавляется пустое пространство.
+
+round	Картинка повторится так, чтобы в области поместилось целое число рисунков, если это не удается 
+
+
+сделать, то фоновые рисунки масштабируются.
+
+
+Значение по умолчанию: repeat - покрывает узором весь экран.
+
+Пример 
+
+По умолчанию фоновая картинка замостит собой весь элемент:
+
+```
+<div id="elem"></div>
+#elem {
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте сделаем так, чтобы картинка не повторялась:
+
+```
+<div id="elem"></div>
+#elem {
+	background-repeat: no-repeat;
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+А теперь пусть картинка повторяется по оси X:
+
+```
+<div id="elem"></div>
+#elem {
+	background-repeat: repeat-x;
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+А теперь по оси Y:
+
+```
+<div id="elem"></div>
+#elem {
+	background-repeat: repeat-y;
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+Повторяющиеся по осям картинки можно позиционировать с помощью свойства background-position:
+
+```
+<div id="elem"></div>
+#elem {
+	background-repeat: repeat-y;
+	background-position: top center;
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+Посмотрим, как работает значение space:
+
+```
+<div id="elem"></div>
+#elem {
+	background-repeat: space;
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+Посмотрим, как работает значение round:
+
+```
+<div id="elem"></div>
+#elem {
+	background-repeat: round;
+	background-image: url("bg.png");
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+
+### Другие свойства для фона в CSS ⊗mkPmDcBIP
+
+https://code.mu/ru/markup/book/prime/decoration/background-image-propeties/
+
+Изучите теорию по следующим ссылкам:
+
+background-position 
+
+https://code.mu/ru/markup/manual/css/property/background-position/
+
+background-size 
+
+background-attachment 
+
+background-clip 
+
+background-origin 
+
+background
+
+Изучите указанные свойства. Самостоятельно потренируйтесь работать с каждым из них.
+
+
+
+
+
+
+
+
+### Свойство background-position
+
+https://code.mu/ru/markup/manual/css/property/background-position/
+
+Свойство background-position задает местоположение фоновой картинки элемента. Местоположение можно задавать с помощью любых единиц для размеров. Первое значение обозначает отступ слева, второе - отступ сверху.
+
+Можно также задавать положение ключевыми словами. В этом случае порядок значений не важен. Ключевые слова для вертикали: top, center, bottom. Ключевые слова по горизонтали: left, center, right.
+
+Как пользоваться ключевыми словами
+
+Чтобы разместить картинку ключевым словом, нужно указать одно значение для вертикали и одно для горизонтали. К примеру, если указать значение top right, то картинка станет сверху справа.
+
+Порядок слов неважен: можно написать top right, а можно - right top. Если есть ключевое слово center - его можно опускать. Например, top center, все равно что просто top. А center center все равно что просто center.
+
+Синтаксис
+
+```
+селектор {
+	background-position: два значения через пробел;
+}
+```
+
+
+Пример
+ 
+По умолчанию фоновая картинка будет в верхнем левом углу:
+
+```
+<div id="elem"></div>
+#elem {
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Давайте разместим фоновую картинку в верхний правый угол:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: top right;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте разместим фоновую картинку в нижний правый угол:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: bottom right;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте разместим фоновую картинку справа и по центру по вертикали:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: right center;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте разместим фоновую картинку по центру блока:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: center center;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+Давайте разместим фоновую картинку на расстоянии 20px слева и 40px сверху:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: 20px 40px;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+Давайте разместим фоновую картинку на расстоянии 90% слева и 100% сверху:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: 90% 100%;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте разместим фоновую картинку на расстоянии 30px слева и по снизу по вертикали:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: 30px bottom;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте разместим фоновую картинку на расстоянии 30px слева и по центру по вертикали:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: 30px center;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример
+ 
+Давайте разместим фоновую картинку на расстоянии 30px сверху и по центру по горизонтали:
+
+```
+<div id="elem"></div>
+#elem {
+	background-position: center 30px;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
 
 

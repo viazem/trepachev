@@ -4104,6 +4104,8 @@ round	Картинка повторится так, чтобы в области
 
 ### Другие свойства для фона в CSS ⊗mkPmDcBIP
 
+TODO:Другие свойства для фона в CSS ⊗mkPmDcBIP 
+
 https://code.mu/ru/markup/book/prime/decoration/background-image-propeties/
 
 Изучите теорию по следующим ссылкам:
@@ -4114,9 +4116,15 @@ https://code.mu/ru/markup/manual/css/property/background-position/
 
 background-size 
 
+https://code.mu/ru/markup/manual/css/property/background-size/
+
 background-attachment 
 
+https://code.mu/ru/markup/manual/css/property/background-attachment/
+
 background-clip 
+
+https://code.mu/ru/markup/manual/css/property/background-clip/
 
 background-origin 
 
@@ -4308,6 +4316,488 @@ https://code.mu/ru/markup/manual/css/property/background-position/
 	width: 400px;
 	height: 300px;
 	border: 1px solid black;
+}
+```
+
+
+
+### Свойство background-size
+
+https://code.mu/ru/markup/manual/css/property/background-size/
+
+Свойство background-size задает размер картинки фона. Значением свойства служат любые единицы для размеров, либо ключевые слова auto, cover или contain.
+
+Синтаксис
+
+```
+селектор {
+	background-size: значение;
+}
+```
+
+Ключевые слова
+
+auto	
+
+Фон будет иметь натуральный размер, такой, как реальный размер картинки фона. Если же auto задано только для одной стороны, то по этой стороне фон будет масштабироваться так, чтобы иметь неискаженные пропорции.
+
+cover	
+
+Масштабирует картинку так, чтобы она накрыла собой весь блок с сохранением пропорций. Картинка будет стараться поместиться целиком, но это не всегда будет получаться, поэтому какая-то ее часть будет обрезаться. Блок всегда будет покрыт картинкой целиком.
+
+
+contain	
+
+Масштабирует картинку так, чтобы она целиком влезла в блок с сохранением пропорций. При этом она может занять или всю ширину, или всю высоту (зависит от пропорций картинки и от размеров элемента). Блок в общем случае будет покрыт картинкой не целиком (зато картинка всегда будет видна вся, хоть и в уменьшенном варианте).
+
+Значение по умолчанию: auto.
+
+Использование
+
+
+Единицы для размеров и auto могут быть использованы в различных комбинациях, например, так: auto 20px, или 30% 20px, или auto 30% и так далее. В этом случае первый параметр задает размер фона по ширине, а второй параметр - размер фона по высоте. Если указан один параметр - то он будет задавать размер фона и по ширине, и по высоте одновременно.
+
+Пример
+ 
+Сейчас фоновая картинка будет иметь свой натуральный размер:
+
+```
+<div id="elem"></div>
+
+#elem {
+	background-repeat: no-repeat;
+	background-image: url("bg.png");
+	border: 1px solid black;
+	width: 550px;
+	height: 400px;
+}
+```
+
+Пример
+ 
+Сейчас фоновая картинка будет размер 300px на 400px (в нашем случае пропорции картинки исказятся):
+
+```
+<div id="elem"></div>
+
+#elem {
+	background-size: 300px 400px;
+	background-repeat: no-repeat;
+	background-image: url("bg.png");
+	border: 1px solid black;
+	width: 400px;
+	height: 400px;
+}
+```
+
+Пример
+ 
+Сейчас фоновая картинка будет размер 400px на 400px (в нашем случае пропорции картинки исказятся):
+
+```
+<div id="elem"></div>
+
+#elem {
+	background-size: 400px;
+	background-repeat: no-repeat;
+	background-image: url("bg.png");
+	border: 1px solid black;
+	width: 400px;
+	height: 400px;
+}
+```
+
+Пример
+ 
+Сейчас фоновая картинка будет размер 400px по горизонтали, а по вертикали ее размер подстроится так, чтобы пропорции не исказились:
+
+```
+<div id="elem"></div>
+
+#elem {
+	background-size: 400px auto;
+	background-repeat: no-repeat;
+	background-image: url("bg.png");
+	border: 1px solid black;
+	width: 400px;
+	height: 400px;
+}
+```
+
+Пример
+ 
+Сейчас фоновая картинка будет размер 400px по вертикали, а по горизонтали ее размер подстроится так, чтобы пропорции не исказились:
+
+```
+<div id="elem"></div>
+
+#elem {
+	background-size: auto 400px;
+	background-repeat: no-repeat;
+	background-image: url("bg.png");
+	border: 1px solid black;
+	width: 400px;
+	height: 400px;
+}
+```
+
+Пример . Значение contain
+
+Посмотрите на работу значения contain:
+
+```
+<div id="elem1" class="elem"></div>
+<div id="elem2" class="elem"></div>
+<div id="elem3" class="elem"></div>
+<div id="elem4" class="elem"></div>
+<div id="elem5" class="elem"></div>
+<div id="elem6" class="elem"></div>
+.elem {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url("bg.png");
+	border: 1px solid black;
+	margin-bottom: 20px;
+}
+
+#elem1 {
+	width: 600px;
+	height: 500px;
+}
+
+#elem2 {
+	width: 500px;
+	height: 600px;
+}
+
+#elem3 {
+	width: 400px;
+	height: 400px;
+}
+
+#elem4 {
+	width: 300px;
+	height: 400px;
+}
+
+#elem5 {
+	width: 200px;
+	height: 400px;
+}
+
+#elem6 {
+	width: 300px;
+	height: 100px;
+}
+```
+
+
+Пример . Значение cover
+
+Посмотрите на работу значения cover:
+
+```
+<div id="elem1" class="elem"></div>
+<div id="elem2" class="elem"></div>
+<div id="elem3" class="elem"></div>
+<div id="elem4" class="elem"></div>
+<div id="elem5" class="elem"></div>
+<div id="elem6" class="elem"></div>
+.elem {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url("bg.png");
+	border: 1px solid black;
+	margin-bottom: 20px;
+}
+
+#elem1 {
+	width: 600px;
+	height: 500px;
+}
+
+#elem2 {
+	width: 500px;
+	height: 600px;
+}
+
+#elem3 {
+	width: 400px;
+	height: 400px;
+}
+
+#elem4 {
+	width: 300px;
+	height: 400px;
+}
+
+#elem5 {
+	width: 200px;
+	height: 400px;
+}
+
+#elem6 {
+	width: 300px;
+	height: 100px;
+}
+```
+
+
+Пример . Улучшим работу cover
+
+Работу значения cover можно улучшить, если отцентрировать картинку с помощью свойства background-position (в нашем случае на видимые части начнут попадать головы лошадей, а не их задницы):
+
+```
+<div id="elem1" class="elem"></div>
+<div id="elem2" class="elem"></div>
+<div id="elem3" class="elem"></div>
+<div id="elem4" class="elem"></div>
+<div id="elem5" class="elem"></div>
+<div id="elem6" class="elem"></div>
+.elem {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url("bg.png");
+	border: 1px solid black;
+	margin-bottom: 20px;
+}
+
+#elem1 {
+	width: 600px;
+	height: 500px;
+}
+
+#elem2 {
+	width: 500px;
+	height: 600px;
+}
+
+#elem3 {
+	width: 400px;
+	height: 400px;
+}
+
+#elem4 {
+	width: 300px;
+	height: 400px;
+}
+
+#elem5 {
+	width: 200px;
+	height: 400px;
+}
+
+#elem6 {
+	width: 300px;
+	height: 100px;
+}
+```
+
+
+### Свойство background-attachment
+
+https://code.mu/ru/markup/manual/css/property/background-attachment/
+
+Свойство background-attachment задает каким образом прокручивать фоновую картинку элемента: вместе с текстом или текст будет скользить по картинке.
+
+Синтаксис
+
+```
+селектор {
+	background-attachment: fixed | scroll | local;
+}
+```
+
+Значения
+
+Значение	Описание
+
+fixed	Картинка фона будет неподвижной, а текст будет скользить по ней.
+
+scroll	Картинка фона будет прокручиваться вместе с текстом.
+
+local	Фон фиксируется с учетом поведения элемента. Если элемент имеет прокрутку, то фон будет прокручиваться вместе с содержимым, но фон выходящий за рамки элемента остается на месте.
+
+Значение по умолчанию: scroll.
+
+Пример . Значение scroll
+
+Сейчас свойство background-attachment установлено в значение scroll. Прокрутите элемент по вертикали - вы увидите, как текст прокручивается вместе с фоном:
+
+```
+<body>
+	<div id="elem">
+		какой-то длинный текст...
+	</div>
+</body>
+body {
+	background-attachment: scroll;
+	background-image: url("bg.png");
+}
+
+#elem {
+	width: 400px;
+	margin: 0 auto;
+	text-align: justify;
+	font-weight: bold;
+	font-size: 20px;
+}
+```
+
+Результат выполнения кода:
+
+открыть в дочернем окне
+
+Пример . Значение fixed
+
+А теперь свойство background-attachment установлено в значение fixed. Прокрутите элемент по вертикали - вы увидите, как текст скользит по фону:
+
+```
+<body>
+	<div id="elem">
+		какой-то длинный текст...
+	</div>
+</body>
+body {
+	background-attachment: fixed;
+	background-image: url("bg.png");
+}
+
+#elem {
+	width: 400px;
+	margin: 0 auto;
+	text-align: justify;
+	font-weight: bold;
+	font-size: 20px;
+}
+```
+
+Результат выполнения кода:
+
+открыть в дочернем окне
+
+
+### Свойство background-clip
+
+Свойство background-clip задает как фоновая заливка или фоновая картинка будет размещаться относительно элемента: часть фона будет залазить под границу, фон не будет залазить под границу или фон будет размещаться только над содержимым элемента (то есть padding отодвинет фон).
+
+Синтаксис
+
+```
+селектор {
+	background-clip: padding-box | border-box | content-box;
+}
+```
+
+начения
+
+Значение	Описание
+
+border-box	Фон залезет под границу.
+
+padding-box	Фон не будет залезать под границу.
+
+content-box	Фон будет только над содержимым.
+
+Значение по умолчанию: border-box.
+
+Пример . Значение padding-box, картинка
+
+В данном случае фон не зайдет под границу:
+
+```
+<div id="elem"></div>
+#elem {
+	background-clip: padding-box;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	border: 10px dashed black;
+	padding: 30px;
+	width: 250px;
+	height: 150px;
+}
+```
+
+Пример . Значение border-box, картинка
+
+Сейчас фон зайдет под границу:
+
+```
+<div id="elem"></div>
+#elem {
+	background-clip: border-box;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	border: 10px dashed black;
+	padding: 30px;
+	width: 250px;
+	height: 150px;
+}
+```
+
+Пример . Значение content-box
+
+А теперь та часть фона, которая находится под padding, будет обрезана:
+
+```
+<div id="elem"></div>
+#elem {
+	background-clip: content-box;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	border: 10px dashed black;
+	padding: 30px;
+	width: 250px;
+	height: 150px;
+}
+```
+
+Пример . Значение padding-box, заливка
+
+Сейчас фоновый цвет не зайдет под границу:
+
+```
+<div id="elem"></div>
+#elem {
+	background-color: orange;
+	background-clip: padding-box;
+	border: 10px dashed black;
+	padding: 30px;
+	width: 250px;
+	height: 150px;
+}
+```
+
+Пример . Значение border-box, заливка
+
+А теперь фоновый цвет зайдет под границу:
+
+```
+<div id="elem"></div>
+#elem {
+	background-color: orange;
+	background-clip: border-box;
+	border: 10px dashed black;
+	padding: 30px;
+	width: 250px;
+	height: 150px;
+}
+```
+
+Пример . Значение content-box, background-color
+
+А теперь фоновая заливка будет отодвинута padding:
+
+```
+<div id="elem"></div>
+#elem {
+	background-color: orange;
+	background-clip: content-box;
+	border: 10px dashed black;
+	padding: 30px;
+	width: 250px;
+	height: 150px;
 }
 ```
 

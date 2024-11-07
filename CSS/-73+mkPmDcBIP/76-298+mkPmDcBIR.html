@@ -1,0 +1,107 @@
+<!-- ⊗mkPmDcBIP -->
+<!-- 76-298 -->
+<!-- https://code.mu/ru/markup/manual/css/property/background-origin/ -->
+
+<!-- Для проверки ответов -->
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>⊗mkPmDcBIP</title>
+
+	
+<style>
+
+p.answ { 
+	width: 600px;  
+	line-height: 1.2; 
+	font-family: Verdana, Arial, sans-serif; 
+	font-size: 20px; 
+}
+
+div.exam { 
+	width: 600px;  
+	line-height: 1.2; 
+	font-family: Arial, sans-serif; 
+	font-size: 20px; 
+}
+
+code { 
+	color: blue; 
+	font-family: courier, monospace, sans-serif; 
+}
+
+#elem {
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	border: 10px dashed black;
+	padding: 30px;
+	width: 250px;
+	height: 150px;
+}
+
+
+#elem1 {
+	background-origin: border-box;
+	background-image: url("bg.png");
+	border: 10px dashed black;
+	padding: 30px;
+	width: 250px;
+	height: 150px;
+}
+
+
+#elem2 {
+	background-origin: content-box;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	border: 10px dashed black;
+	padding: 30px;
+	width: 250px;
+	height: 150px;
+}
+
+
+#elem3 {
+	background-repeat: repeat;
+	background-image: url("bg.png");
+	border: 10px dashed black;
+	padding: 30px;
+	width: 350px;
+	height: 300px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!--
+
+-->
+
+По умолчанию фон не будет заходить под границу
+
+<div id="elem"></div>
+
+Сейчас фон зайдет под границу
+
+<div id="elem1"></div>
+
+А теперь фон отодвинется через padding
+
+<div id="elem2"></div>
+
+При background-repeat в значении repeat свойство background-origin всегда работает, как при значении border-box, то есть фон всегда заходит под границу
+
+<div id="elem3"></div>
+
+
+
+
+</body>
+
+</html>

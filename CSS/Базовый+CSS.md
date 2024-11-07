@@ -4104,9 +4104,12 @@ round	Картинка повторится так, чтобы в области
 
 ### Другие свойства для фона в CSS ⊗mkPmDcBIP
 
-TODO:Другие свойства для фона в CSS ⊗mkPmDcBIP 
+[⊗mkPmDcBIP]: Другие свойства для фона в CSS
 
-https://code.mu/ru/markup/book/prime/decoration/background-image-propeties/
+TODO: Другие свойства для фона в CSS ⊗mkPmDcBIP 
+
+[Ссылка на урок "Другие свойства для фона в CSS"](https://code.mu/ru/markup/book/prime/decoration/background-image-propeties/ "⊗mkPmDcBIP")
+
 
 Изучите теорию по следующим ссылкам:
 
@@ -4128,7 +4131,13 @@ https://code.mu/ru/markup/manual/css/property/background-clip/
 
 background-origin 
 
+<https://code.mu/ru/markup/manual/css/property/background-origin/>
+
+
 background
+
+<https://code.mu/ru/markup/manual/css/property/background/>
+
 
 Изучите указанные свойства. Самостоятельно потренируйтесь работать с каждым из них.
 
@@ -4678,7 +4687,9 @@ body {
 открыть в дочернем окне
 
 
-### Свойство background-clip
+### Свойство background-clip ( 77 of 298 )
+
+<https://code.mu/ru/markup/manual/css/property/background-clip/>
 
 Свойство background-clip задает как фоновая заливка или фоновая картинка будет размещаться относительно элемента: часть фона будет залазить под границу, фон не будет залазить под границу или фон будет размещаться только над содержимым элемента (то есть padding отодвинет фон).
 
@@ -4801,4 +4812,203 @@ content-box	Фон будет только над содержимым.
 }
 ```
 
+
+### Свойство background-position-x ( 78 )
+
+[Другие свойства для фона в CSS][⊗mkPmDcBIP]
+
+https://code.mu/ru/markup/manual/css/property/background-position-x/
+
+
+Свойство background-position-x задает местоположение фоновой картинки элемента по горизонтали.
+
+Свойство может принимать следующие значения: `left, center, right`, а также можно указать положение фона в процентах или пикселях.
+
+Синтаксис
+
+```
+селектор {
+	background-position-x: значение;
+}
+```
+
+Пример 
+
+Давайте расположим фоновую картинку слева по горизонтали:
+
+```
+<div id="elem"></div>
+
+#elem {
+	background-position-x: left;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+А теперь укажем положение для фона в процентах:
+
+```
+<div id="elem"></div>
+
+#elem {
+	background-position-x: 20%;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+
+### Свойство background-position-y
+
+[Другие свойства для фона в CSS][⊗mkPmDcBIP]
+
+<https://code.mu/ru/markup/manual/css/property/background-position-y/>
+
+
+Свойство background-position-y задает местоположение фоновой картинки элемента по вертикали.
+
+Свойство может принимать следующие значения: `top, center, bottom`, а также можно указать положение фона в процентах или пикселях.
+
+Синтаксис
+
+```
+селектор {
+	background-position-y: значение;
+}
+```
+
+Пример 
+
+Давайте расположим фоновую картинку вверху по вертикали:
+
+```
+<div id="elem"></div>
+
+#elem {
+	background-position-y: top;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+Пример 
+
+А теперь укажем положение для фона в процентах:
+
+```
+<div id="elem"></div>
+
+#elem {
+	background-position-y: 80%;
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+}
+```
+
+
+### Свойство background
+
+<https://code.mu/ru/markup/manual/css/property/background/>
+
+
+Свойство background задает одновременно все свойства фона: background-attachment, background-color, background-image, background-position, background-repeat, background-size, background-origin, background-clip.
+
+Порядок свойств значения не имеет. Ненужные свойства можно опускать - в этом случае оно примет значение по умолчанию. Свойства background-position и background-size задаются через слеш и в этом случае порядок имеет значение (сначала позиция, потом размер).
+
+Также свойство background принимает значение none, соответствующее отсутствию фона.
+
+Синтаксис
+
+```
+селектор {
+	background: сокращаемые свойства;
+}
+```
+
+### Свойство background-origin ( 76 )
+
+<https://code.mu/ru/markup/manual/css/property/background-origin/>
+
+Свойство background-origin задает то, как фоновая картинка (именно картинка, не заливка) будет размещаться относительно элемента: часть картинки фона будет залазить под границу, фон не будет залазить под границу или фон будет размещаться только над содержимым элемента (то есть padding отодвинет фон).
+
+Синтаксис
+
+```
+селектор {
+	background-origin: padding-box | border-box | content-box;
+}
+```
+
+Значения
+
+Значение	Описание
+
+border-box	Фоновая картинка залезет под границу.
+padding-box	Фоновая картинка не будет залезать под границу.
+content-box	Фоновая картинка будет только над содержимым.
+
+Значение по умолчанию: padding-box.
+
+Замечания
+
+Свойство background-origin не работает, когда background-attachment имеет значение fixed. Также при background-repeat в значении repeat свойство background-origin всегда работает, как при значении border-box.
+
+Пример . По умолчанию
+
+По умолчанию фон не будет заходить под границу:
+
+```
+<div id="elem"></div>
+#elem {
+	background-image: url("bg.png");
+	background-repeat: no-repeat;
+	border: 10px dashed black;
+	padding: 30px;
+	width: 250px;
+	height: 150px;
+}
+```
+
+
+### Работа с маркерами списков ul в CSS
+
+<https://code.mu/ru/markup/book/prime/decoration/ul-markers/>
+
+Мы с вами еще в начале учебника разбирались со списками ul и вы наверняка помните о том, что список ul имеет маркеры в виде точек. Однако, вид этих маркеров можно сменить или даже убрать их совсем. Делается это с помощью свойства list-style-type. В следующих уроках мы подробно рассмотрим, какие значения оно может принимать для списка ul.
+
+
+### Квадратные маркеры списков ul в CSS ⊗mkPmDcSqUM
+
+<https://code.mu/ru/markup/book/prime/decoration/square-ul-markers/>
+
+Если установить в свойстве list-style-type значение square, то мы получим для нашего списка маркеры в виде квадратиков:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+
+ul {
+	list-style-type: square;
+}
+```
 

@@ -5012,3 +5012,138 @@ ul {
 }
 ```
 
+
+### Маркеры списков ul в виде кружков в CSS    ⊗mkPmDcCrUM (116)
+
+https://code.mu/ru/markup/book/prime/decoration/circle-ul-markers/
+
+
+Значение circle в свойстве list-style-type позволяет сделать маркеры в виде кружков:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+
+ul {
+	list-style-type: circle;
+}
+```
+
+
+### Работа с маркерами списков ul в CSS  ⊗mkPmDcDUM  (117)
+
+https://code.mu/ru/markup/book/prime/decoration/disc-ul-markers/
+
+
+Если задать в свойстве list-style-type значение disc, то маркеры станут закрашенными кружками. При создании списка данное значение используется по умолчанию:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+
+ul {
+	list-style-type: disc;
+}
+```
+
+
+### Отсутствие маркеров списков ul в CSS ⊗mkPmDcNUM  (118)
+
+https://code.mu/ru/markup/book/prime/decoration/none-ul-markers/
+
+Чтобы убрать маркеры нужно в свойстве list-style-type задать значение none:
+
+```
+<ul>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ul>
+
+ul {
+	list-style-type: none;
+}
+
+```
+
+
+### Работа с маркерами списков ol в CSS  ⊗mkPmDcOM 119
+
+
+Маркеры списка ol также меняются с помощью свойства list-style-type. В следующих уроках мы подробно рассмотрим какие значения оно может принимать для списка ol.
+
+
+
+### Строчные римские цифры для списков ol в CSS ⊗mkPmDcLROM 120
+
+https://code.mu/ru/markup/book/prime/decoration/lower-roman-ol-markers/
+
+Если в свойстве list-style-type задать значение lower-roman, то маркерами списка станут маленькие или строчные римские цифры:
+
+```
+<ol>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ol>
+
+ol {
+	list-style-type: lower-roman;
+}
+```
+
+
+### Заглавные римские цифры для списков ol в CSS ⊗mkPmDcUROM  121
+
+Чтобы задать заглавные римские цифры нужно в свойстве list-style-type установить значение upper-roman:
+
+
+```
+ol>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ol>
+
+ol {
+	list-style-type: upper-roman;
+}
+```
+
+
+### Строчные латинские буквы для списков ol в CSS ⊗mkPmDcLAOM  122
+
+https://code.mu/ru/markup/book/prime/decoration/lower-alpha-ol-markers/
+
+Значение lower-alpha свойства list-style-type делает нумерацию маленькими (строчными) латинскими буквами:
+
+```
+<ol>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+	<li>list item</li>
+</ol>
+
+ol {
+	list-style-type: lower-alpha;
+}
+```
+
